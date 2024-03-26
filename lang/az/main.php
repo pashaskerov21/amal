@@ -1,0 +1,70 @@
+<?php
+
+return [
+    "admin_panel" => "Admin Panel",
+    "dashboard" => "İdarə paneli",
+    "navigation" => "Naviqasiya",
+    "error" => "Xəta",
+    "congratulations" => "Təbriklər",
+    "login_error_message" => "Giriş uğursuz oldu",
+    "store_message" => "Uğurla əlavə edildi",
+    "update_message" => "Dəyişikliklər uğurla yadda saxlanıldı",
+    "delete_message" => "Uğurla silindi",
+    "my_account" => "Hesabım",
+    "logout" => "Çıxış",
+    "username" => "İstifadəçi adı",
+    "email" => "E-mail",
+    "password" => "Şifrə",
+    "current_password" => "Cari şifrə",
+    "new_password" => "Yeni şifrə",
+    "account_type" => "Hesab növü",
+    "save" => "Yadda saxla",
+    "add" => "Əlavə et",
+    "edit" => "Düzəliş et",
+    "actions" => "Əməliyyatlar",
+    "users" => "İstifadəçilər",
+    "attention" => "DIqqət!",
+    "delete_warning_message" => "Silmək istəyirsiniz?",
+    "email_exist_error" => "Bu email mövcuddur",
+    "incorrect_current_password" => "Mövcud şifrə yanlışdır",
+
+    "settings" => "Tənzimləmələr",
+    "menu" => "Menyu",
+    "banner" => "Banner",
+    "page" => "Səhifə",
+    "image" => "Şəkil",
+    "video" => "Video",
+    "text" => "Mətn",
+    "home" => "Ana səhifə",
+    "services" => "Xidmətlər",
+    "about" => "Haqqımızda",
+    "main_content" => "Əsas məzmun",
+    "team" => "Komanda",
+    "our_team" => "Komandamız",
+    
+
+    "title" => "Başlıq",
+    "description" => "Təsvir",
+    "keywords" => "Açar sözlər", 
+    "author" => "Müəllif",
+    "copyright" => "Copyright",
+    "address" => "Ünvan",
+    "phone" => "Telefon",
+    "home_title" => "Ana səhifə başlığı",
+    "home_text" => "Ana səhifə mətni",
+    "report_title" => "Hesabat başlığı",
+    "report_text" => "Hesabat mətni",
+    "report" => "Hesabat",
+    "value" => "Dəyər",
+    "texts" => "Mətnlər",
+    "subtitle" => "Alt başlıq",
+    
+
+
+    
+    
+    
+    "iane_et" => "İanə et",
+    "konullu_ol" => "Könüllü ol",
+    "etrafli_bax" => "Ətraflı bax",
+];
