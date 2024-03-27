@@ -27,6 +27,8 @@ return [
     "delete_warning_message" => "Вы хотите удалить?",
     "email_exist_error" => "Этот адрес электронной почты доступен",
     "incorrect_current_password" => "Текущий пароль неверен",
+    "yes" => "Да",
+    "no" => "Нет",
 
     "settings" => "Настройки",
     "menu" => "Меню",
@@ -58,6 +60,18 @@ return [
     "value" => "Ценить",
     "texts" => "Тексты",
     "subtitle" => "Субтитры",
+    "years" => "Годы",
+    "year" => "Год",
+    "months" => "Месяцы",
+    "month" => "Месяц",
+    "amount" => "Сумма",
+    "annual_report" => "Ежегодный отчет",
+    "monthly_report" => "Ежемесячный отчет",
+    "annual" => "Ежегодный",
+    "monthly" => "Ежемесячно",
+    "service" => "Сервис",
+    "value_exist_message" => "Это значение доступно",
+    "report_year_delete_message" => "Все отчеты, относящиеся к этому году, будут удалены. Все еще хотите удалить?",
 
 
     
@@ -66,4 +80,8 @@ return [
     "iane_et" => "Пожертвуйте",
     "konullu_ol" => "Волонтер",
     "etrafli_bax" => "Узнать больше",
+    "edilen_yardimlarin_sayi" => "Количество оказанной помощи",
+    "subscribe_text" => "Подписаться, чтобы оставаться в курсе",
+    "subscribe" => "Подписаться",
+    "enter_email_address" => "Введите свой электронный адрес",
 ];

@@ -42,12 +42,12 @@
                 </a>
             </li>
             <li class="side-nav-item">
-                <a data-bs-toggle="collapse" href="#sidebar-services" class="side-nav-link">
+                <a data-bs-toggle="collapse" href="#sidebar-about" class="side-nav-link">
                     <i class="ri-image-line"></i>
                     <span> {{__('main.about')}} </span>
                     <span class="menu-arrow"></span>
                 </a>
-                <div class="collapse show" id="sidebar-services">
+                <div class="collapse show" id="sidebar-about">
                     <ul class="side-nav-second-level">
                         <li>
                             <a href="{{ route('admin.about.index') }}">{{__('main.main_content')}}</a>
@@ -69,6 +69,26 @@
                     <i class="ri-customer-service-2-fill"></i>
                     <span> {{__('main.services')}} </span>
                 </a>
+            </li>
+            <li class="side-nav-item">
+                <a data-bs-toggle="collapse" href="#sidebar-report" class="side-nav-link">
+                    <i class="ri-image-line"></i>
+                    <span> {{__('main.report')}} </span>
+                    <span class="menu-arrow"></span>
+                </a>
+                <div class="collapse show" id="sidebar-report">
+                    <ul class="side-nav-second-level">
+                        <li>
+                            <a href="{{ route('admin.report.year.index') }}">{{__('main.years')}}</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('admin.report.annual_report.index') }}">{{__('main.annual_report')}}</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('admin.report.monthly_report.index') }}">{{__('main.monthly_report')}}</a>
+                        </li>
+                    </ul>
+                </div>
             </li>
             <li class="side-nav-item">
                 <a href="{{ route('admin.menu.index') }}" class="side-nav-link">

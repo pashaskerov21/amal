@@ -6,8 +6,10 @@ use App\Http\Controllers\Controller;
 use App\Models\About;
 use App\Models\AboutReport;
 use App\Models\AboutText;
+use App\Models\AnnualReport;
 use App\Models\Banner;
 use App\Models\MenuTranslate;
+use App\Models\MonthlyReport;
 use App\Models\Service;
 use App\Models\Team;
 use Illuminate\Http\Request;
@@ -61,7 +63,10 @@ class SiteController extends Controller
     public function report(){
         $lang = ['az' => '/hesabat','en' => '/en/report', 'ru' => '/ru/otcet'];
         $meta_title = MenuTranslate::where('menu_id',5)->where('lang', Session('lang'))->first()->title;
-        return view('site.pages.report', compact('lang','meta_title'));
+        $services = Service::where('destroy',0)->orderBy('order')->get();
+        $annual_reports = AnnualReport::where('destroy', 0)->orderByDesc('year')->get();
+        $monthly_reports = MonthlyReport::where('destroy', 0)->orderByDesc('year')->orderByDesc('month')->get();
+        return view('site.pages.report', compact('lang','meta_title','services','annual_reports','monthly_reports'));
     }
     public function how_we_work(){
         $lang = ['az' => '/nece-isleyirik','en' => '/en/how-we-work', 'ru' => '/ru/kak-my-rabotaem'];

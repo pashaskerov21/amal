@@ -64,9 +64,29 @@
 
     @include('site.partials.header')
     @yield('content')
+    <div class="apply" style="background-color: #F4F5FA;">
+        <div class="container">
+            <div class="row align-items-center py-3">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <div class="title">{{ __('main.subscribe_text') }}</div>
+                </div>
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <div class="apply-form">
+                        <form action="">
+                            <div class="form-group">
+                                <input type="text" placeholder="{{ __('main.enter_email_address') }}">
+                                <button>{{ __('main.subscribe') }}</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     @include('site.partials.footer')
 
     <script src="{{ asset('front-assets/assets/jquery/jquery.min.js') }}"></script>
+    @stack('report_js')
     <script src="{{ asset('front-assets/assets/bootstrap/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('front-assets/assets/swiper/swiper-bundle.min.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>

@@ -27,6 +27,8 @@ return [
     "delete_warning_message" => "Silmək istəyirsiniz?",
     "email_exist_error" => "Bu email mövcuddur",
     "incorrect_current_password" => "Mövcud şifrə yanlışdır",
+    "yes" => "Hə",
+    "no" => "Yox",
 
     "settings" => "Tənzimləmələr",
     "menu" => "Menyu",
@@ -58,6 +60,18 @@ return [
     "value" => "Dəyər",
     "texts" => "Mətnlər",
     "subtitle" => "Alt başlıq",
+    "years" => "İllər",
+    "year" => "İl",
+    "months" => "Aylar",
+    "month" => "Ay",
+    "amount" => "Məbləğ",
+    "annual_report" => "İllik hesabat",
+    "monthly_report" => "Aylıq hesabat",
+    "annual" => "İllik",
+    "monthly" => "Aylıq",
+    "service" => "Xidmət",
+    "value_exist_message" => "Bu dəyər mövcuddur",
+    "report_year_delete_message" => "Bu ilə aid olan bütün hesabatlar silinəcək. Yenə də silmək istəyirsiniz?",
     
 
 
@@ -67,4 +81,8 @@ return [
     "iane_et" => "İanə et",
     "konullu_ol" => "Könüllü ol",
     "etrafli_bax" => "Ətraflı bax",
+    "edilen_yardimlarin_sayi" => "Edilən yardımların sayı",
+    "subscribe_text" => "Yeniliklərdən xəbərdar olmaq üçün Abonə OL",
+    "subscribe" => "Abunə ol",
+    "enter_email_address" => "E-mail adresinizi daxil edin",
 ];

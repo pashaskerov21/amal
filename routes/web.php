@@ -7,6 +7,9 @@ use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\BannerController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\MenuController;
+use App\Http\Controllers\Admin\Report\AnnualReportController;
+use App\Http\Controllers\Admin\Report\MonthlyReportController;
+use App\Http\Controllers\Admin\Report\ReportYearController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\TeamController;
@@ -116,6 +119,26 @@ Route::middleware([LocaleMiddleware::class])->group(function () {
                     Route::post('/store', [TeamController::class, 'store'])->name('store');
                     Route::post('/update/{id}', [TeamController::class, 'update'])->name('update');
                     Route::post('/sort', [TeamController::class, 'sort'])->name('sort');
+                });
+
+                Route::group(['prefix' => 'report', 'as' => 'report.'], function () {
+                    Route::group(['prefix' => 'year', 'as' => 'year.'], function () {
+                        Route::get('/', [ReportYearController::class, 'index'])->name('index');
+                        Route::get('/create', [ReportYearController::class, 'create'])->name('create');
+                        Route::get('/delete/{id}', [ReportYearController::class, 'destroy'])->name('delete');
+                        Route::post('/store', [ReportYearController::class, 'store'])->name('store');
+                    });
+                    Route::group(['prefix' => 'annual_report', 'as' => 'annual_report.'], function () {
+                        Route::get('/', [AnnualReportController::class, 'index'])->name('index');
+                    });
+                    Route::group(['prefix' => 'monthly_report', 'as' => 'monthly_report.'], function () {
+                        Route::get('/', [MonthlyReportController::class, 'index'])->name('index');
+                        Route::get('/create', [MonthlyReportController::class, 'create'])->name('create');
+                        Route::get('/edit/{id}', [MonthlyReportController::class, 'edit'])->name('edit');
+                        Route::get('/delete/{id}', [MonthlyReportController::class, 'destroy'])->name('delete');
+                        Route::post('/store', [MonthlyReportController::class, 'store'])->name('store');
+                        Route::post('/update/{id}', [MonthlyReportController::class, 'update'])->name('update');
+                    });
                 });
             });
         });

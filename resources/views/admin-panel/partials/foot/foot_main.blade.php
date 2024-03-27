@@ -68,8 +68,24 @@
                 })
             </script>
         @endif
-
-
+        @if (Session::has('report_year_exist_message'))
+            <script>
+                Swal.fire({
+                    icon: 'warning',
+                    title: "{{ __('main.attention') }}",
+                    text: "{{ __('main.value_exist_message') }}",
+                })
+            </script>
+        @endif
+        @if (Session::has('monthly_report_exist_message'))
+            <script>
+                Swal.fire({
+                    icon: 'warning',
+                    title: "{{ __('main.attention') }}",
+                    text: "{{ __('main.value_exist_message') }}",
+                })
+            </script>
+        @endif
 
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script>
@@ -81,8 +97,28 @@
                     text: "{{ __('main.delete_warning_message') }}",
                     icon: "warning",
                     showCancelButton: true,
-                    confirmButtonText: "Yes",
-                    cancelButtonText: "No",
+                    confirmButtonText: "{{ __('main.yes') }}",
+                    cancelButtonText: "{{ __('main.no') }}",
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.href = href;
+                    } else {
+                        return false;
+                    }
+                });
+            }
+        </script>
+        <script>
+            function confirmDeleteReportYear(event, href) {
+                event.preventDefault();
+
+                Swal.fire({
+                    title: "{{ __('main.attention') }}",
+                    text: "{{ __('main.report_year_delete_message') }}",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonText: "{{ __('main.yes') }}",
+                    cancelButtonText: "{{ __('main.no') }}",
                 }).then((result) => {
                     if (result.isConfirmed) {
                         window.location.href = href;

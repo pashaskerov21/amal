@@ -5,8 +5,10 @@
                 <div class="about-images animate__animated animate__fadeInLeft animate__delay-2">
                     <div class="big-img"
                         style="background-image: url('{{ asset('storage/uploads/about/' . $about->image_2) }}');">
+                        @if ($about->image_1)
                         <img class="small-img" src="{{ asset('storage/uploads/about/' . $about->image_1) }}"
-                            alt="about image">
+                        alt="about image">
+                        @endif
                     </div>
                 </div>
             </div>

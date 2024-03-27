@@ -27,6 +27,8 @@ return [
     "delete_warning_message" => "Do you want to delete?",
     "email_exist_error" => "This email is available",
     "incorrect_current_password" => "The current password is incorrect",
+    "yes" => "Yes",
+    "no" => "No",
 
     "settings" => "Settings",
     "menu" => "Menu",
@@ -58,6 +60,18 @@ return [
     "value" => "Value",
     "texts" => "Texts",
     "subtitle" => "Subtitle",
+    "years" => "Years",
+    "year" => "Year",
+    "months" => "Months",
+    "month" => "Month",
+    "amount" => "Amount",
+    "annual_report" => "Annual report",
+    "monthly_report" => "Monthly report",
+    "annual" => "Annual",
+    "monthly" => "Monthly",
+    "service" => "Service",
+    "value_exist_message" => "This value is available",
+    "report_year_delete_message" => "All reports related to this year will be deleted. Still want to delete?",
 
 
     
@@ -66,4 +80,8 @@ return [
     "iane_et" => "Donate",
     "konullu_ol" => "Volunteer",
     "etrafli_bax" => "See more",
+    "edilen_yardimlarin_sayi" => "Number of aid provided",
+    "subscribe_text" => "Subscribe to stay updated",
+    "subscribe" => "Subscribe",
+    "enter_email_address" => "Enter your e-mail address",
 ];
