@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\BannerController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\GalleryController;
 use App\Http\Controllers\Admin\MenuController;
+use App\Http\Controllers\Admin\ProjectController;
 use App\Http\Controllers\Admin\Report\AnnualReportController;
 use App\Http\Controllers\Admin\Report\MonthlyReportController;
 use App\Http\Controllers\Admin\Report\ReportYearController;
@@ -151,6 +152,18 @@ Route::middleware([LocaleMiddleware::class])->group(function () {
                     Route::post('/update/{id}', [GalleryController::class, 'update'])->name('update');
                     Route::post('/sort', [GalleryController::class, 'sort'])->name('sort');
                 });
+
+                Route::group(['prefix' => 'projects', 'as' => 'projects.'], function () {
+                    Route::get('/', [ProjectController::class, 'index'])->name('index');
+                    Route::get('/create', [ProjectController::class, 'create'])->name('create');
+                    Route::get('/edit/{id}', [ProjectController::class, 'edit'])->name('edit');
+                    Route::get('/delete/{id}', [ProjectController::class, 'destroy'])->name('delete');
+                    Route::get('/gallery_delete/{id}', [ProjectController::class, 'gallery_destroy'])->name('gallery_delete');
+                    Route::post('/store', [ProjectController::class, 'store'])->name('store');
+                    Route::post('/update/{id}', [ProjectController::class, 'update'])->name('update');
+                    Route::post('/sort', [ProjectController::class, 'sort'])->name('sort');
+                    Route::post('/gallery_sort', [ProjectController::class, 'gallery_sort'])->name('gallery_sort');
+                });
             });
         });
 
@@ -171,6 +184,10 @@ Route::middleware([LocaleMiddleware::class])->group(function () {
         Route::get('/layihelerimiz', [SiteController::class, 'projects'])->name('projects_az');
         Route::get('/our-projects', [SiteController::class, 'projects'])->name('projects_en');
         Route::get('/nasi-proekty', [SiteController::class, 'projects'])->name('projects_ru');
+
+        Route::get('/layihelerimiz/{slug}', [SiteController::class, 'project_inner'])->name('project_inner_az');
+        Route::get('/our-projects/{slug}', [SiteController::class, 'project_inner'])->name('project_inner_en');
+        Route::get('/nasi-proekty/{slug}', [SiteController::class, 'project_inner'])->name('project_inner_ru');
 
         Route::get('/xidmetlerimiz', [SiteController::class, 'services'])->name('services_az');
         Route::get('/our-services', [SiteController::class, 'services'])->name('services_en');

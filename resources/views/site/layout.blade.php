@@ -64,8 +64,11 @@
     </style>
     <style>
         .gallery_section {
-            widows: 100%;
+            width: 100%;
             padding: 40px 0;
+        }
+        .gallery_grid{
+            width: 100%
         }
     
         .gallery_item {
@@ -118,6 +121,50 @@
             border-radius: 10px;
         }
     </style>
+    <style>
+        .project_progress_bar{
+            widows: 100%;
+            position: relative;
+            height: 30px;
+            margin: 15px 0;
+        }
+        .project_progress_bar .progress_1{
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            width: 100%;
+            height: 10px;
+            background-color: #D9D9D9;
+            z-index: 1;
+        }
+        .project_progress_bar .progress_2{
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            height: 10px;
+            background-color: #0E3654;
+            z-index: 2;
+        }
+        .progress_result{
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 3;
+            width: 56px;
+            height: 30px;
+            background-color: #7BC18F;
+            color: #fff;
+            font-family: Poppins, sans-serif;
+            font-weight: 700;
+            letter-spacing: 1px;
+            font-size: 16px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
 </head>
 
 <body>
@@ -145,7 +192,7 @@
     </div>
     @include('site.partials.footer')
 
-    <script src="{{ asset('front-assets/assets/jquery/jquery.min.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     @stack('report_js')
     <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
     @stack('gallery_grid')

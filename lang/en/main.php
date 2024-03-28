@@ -44,6 +44,7 @@ return [
     "team" => "Team",
     "our_team" => "Our team",
     "gallery" => "Gallery",
+    "projects" => "Our projects",
 
     
     "title" => "Title",
@@ -73,6 +74,21 @@ return [
     "service" => "Service",
     "value_exist_message" => "This value is available",
     "report_year_delete_message" => "All reports related to this year will be deleted. Still want to delete?",
+    "status" => "Status",
+    "active" => "Active",
+    "completed" => "Completed",
+    "all" => "All",
+    "collected" => "Collected",
+    "goal" => "Goal",
+    "card_image" => "Card image",
+    "banner_image" => "Banner image",
+    "date" => "Date",
+    "place" => "Place",
+    "category" => "Category",
+    "card_text" => "Card text",
+    "main_text" => "Main text",
+    "meta_description" => "Meta description",
+    "percent" => "Percent",
 
 
     

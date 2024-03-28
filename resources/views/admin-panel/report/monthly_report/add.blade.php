@@ -22,6 +22,9 @@
                                         {{ $service->getTranslate->where('lang', Session('lang'))->first()->title }}</option>
                                 @endforeach
                             </select>
+                            @if ($services->count() == 0)
+                                <a href="{{route('admin.services.index')}}" class="btn btn-danger my-2"><i class="mdi mdi-plus-circle me-2"></i> {{ __('main.add') }}</a>
+                            @endif
                         </div>
                         <div class="mb-3">
                             <label class="form-label">{{ __('main.month') }}</label>
@@ -40,14 +43,17 @@
                                         {{ $year->value }}</option>
                                 @endforeach
                             </select>
+                            @if ($years->count() == 0)
+                                <a href="{{route('admin.report.year.index')}}" class="btn btn-danger my-2"><i class="mdi mdi-plus-circle me-2"></i> {{ __('main.add') }}</a>
+                            @endif
                         </div>
                         <div class="mb-3">
                             <label class="form-label">{{ __('main.value') }}</label>
-                            <input type="number" class="form-control" name="main_value" required>
+                            <input type="number" class="form-control" name="main_value" value="0" step="any">
                         </div>
                         <div class="mb-3">
                             <label class="form-label">{{ __('main.amount') }}</label>
-                            <input type="number" class="form-control" name="total_amount" required>
+                            <input type="number" class="form-control" name="total_amount" value="0" step="any">
                         </div>
                     </div>
                     <div class="col-12">

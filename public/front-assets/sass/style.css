@@ -440,6 +440,8 @@ button {
   letter-spacing: 0.4px;
 }
 .info-section .swiper-item .content .info-name {
+  display: block;
+  color: #363333;
   font-size: 22px;
   font-weight: 700;
   margin-bottom: 20px;
@@ -642,6 +644,7 @@ button {
 }
 .bg-video .content .number-counter-section .progress_1 {
   display: flex;
+  gap: 20px;
 }
 .bg-video .content .number-counter-section .progress_1 .column {
   text-align: center;
@@ -2442,9 +2445,9 @@ button {
   .general-header .header-logo {
     width: 120px;
   }
-  .general-header .menu-icon {
+  /* .general-header .menu-icon {
     width: 26px;
-  }
+  } */
   .general-header .menu-icon span {
     width: 34px;
   }

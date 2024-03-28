@@ -65,6 +65,12 @@
                 </div>
             </li>
             <li class="side-nav-item">
+                <a href="{{ route('admin.projects.index') }}" class="side-nav-link">
+                    <i class="ri-todo-line"></i>
+                    <span> {{__('main.projects')}} </span>
+                </a>
+            </li>
+            <li class="side-nav-item">
                 <a href="{{ route('admin.services.index') }}" class="side-nav-link">
                     <i class="ri-customer-service-2-fill"></i>
                     <span> {{__('main.services')}} </span>

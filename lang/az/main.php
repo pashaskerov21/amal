@@ -44,6 +44,7 @@ return [
     "team" => "Komanda",
     "our_team" => "Komandamız",
     "gallery" => "Qalereya",
+    "projects" => "Layihələrimiz",
     
 
     "title" => "Başlıq",
@@ -73,6 +74,21 @@ return [
     "service" => "Xidmət",
     "value_exist_message" => "Bu dəyər mövcuddur",
     "report_year_delete_message" => "Bu ilə aid olan bütün hesabatlar silinəcək. Yenə də silmək istəyirsiniz?",
+    "status" => "Status",
+    "active" => "Aktiv",
+    "completed" => "Tamamlanmış",
+    "all" => "Hamısı",
+    "collected" => "Toplanan",
+    "goal" => "Məqsəd",
+    "card_image" => "Kart şəkli",
+    "banner_image" => "Banner şəkli",
+    "date" => "Tarix",
+    "place" => "Yer",
+    "category" => "Kateqoriya",
+    "card_text" => "Kart mətni",
+    "main_text" => "Əsas mətn",
+    "meta_description" => "Meta təsvir",
+    "percent" => "Faiz",
     
 
 

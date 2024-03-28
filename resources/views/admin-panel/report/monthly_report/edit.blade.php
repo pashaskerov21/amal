@@ -32,13 +32,11 @@
                         </div>
                         <div class="mb-3">
                             <label class="form-label">{{ __('main.value') }}</label>
-                            <input type="number" class="form-control" name="main_value"
-                                value="{{ $monthly_report->main_value }}" required>
+                            <input type="number" class="form-control" name="main_value" value="{{ $monthly_report->main_value }}" required step="any">
                         </div>
                         <div class="mb-3">
                             <label class="form-label">{{ __('main.amount') }}</label>
-                            <input type="number" class="form-control" name="total_amount"
-                                value="{{ $monthly_report->total_amount }}" required>
+                            <input type="number" class="form-control" name="total_amount" value="{{ $monthly_report->total_amount }}" required step="any">
                         </div>
                     </div>
                     <div class="col-12">

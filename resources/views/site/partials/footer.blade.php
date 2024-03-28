@@ -13,7 +13,7 @@
                                 <li>
                                     @if (Session('lang') === 'az')
                                         <a
-                                            href="{{ $menu->getTranslate->where('lang', Session('lang'))->first()->slug }}">
+                                            href="/{{ $menu->getTranslate->where('lang', Session('lang'))->first()->slug }}">
                                             {{ $menu->getTranslate->where('lang', Session('lang'))->first()->title }}
                                         </a>
                                     @else
@@ -36,7 +36,7 @@
                                 <li>
                                     @if (Session('lang') === 'az')
                                         <a
-                                            href="{{ $menu->getTranslate->where('lang', Session('lang'))->first()->slug }}">
+                                            href="/{{ $menu->getTranslate->where('lang', Session('lang'))->first()->slug }}">
                                             {{ $menu->getTranslate->where('lang', Session('lang'))->first()->title }}
                                         </a>
                                     @else

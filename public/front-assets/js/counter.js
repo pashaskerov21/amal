@@ -1,15 +1,12 @@
-function custom_count(){
+function custom_count() {
     var flag = true;
     $('.number-counter-section').each(function() {
-        if ($(this).isInViewport()) {  
+        if ($(this).isInViewport()) {
             if (flag) {
-                var arr = [],
-                i = 0;
-                $('.progress_1 .odometer').each(function() {
-                    arr[i++] = $(this).attr('data-count');;
-                    odometer.innerText = arr[0]; 
-                    odometer1.innerText = arr[1];
-                    odometer2.innerText = arr[2]; 
+                var $odometers = $(this).find('.odometer');
+                $odometers.each(function() {
+                    var count = $(this).data('count');
+                    $(this).text(count);
                 });
                 flag = false;
             }
@@ -25,17 +22,16 @@ $.fn.isInViewport = function() {
     var viewportBottom = viewportTop + $(window).height();
 
     return elementBottom > viewportTop && elementTop < viewportBottom;
-    console.log(elementBottom > viewportTop && elementTop < viewportBottom);
 };
 
 $(document).ready(function() {
-
     custom_count();
-    $(window).resize(function() {
+
+    $(window).on("resize", function() {
         custom_count();
     });
-    
-    $(window).on("scroll",function(){
-      custom_count();
+
+    $(window).on("scroll", function() {
+        custom_count();
     });
 });

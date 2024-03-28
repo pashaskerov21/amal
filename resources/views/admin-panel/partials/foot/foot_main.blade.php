@@ -86,6 +86,16 @@
                 })
             </script>
         @endif
+        @if (Session::has('title_exist_error'))
+            <script>
+                Swal.fire({
+                    icon: 'warning',
+                    title: "{{ __('main.attention') }}",
+                    text: "{{ __('main.value_exist_message') }}",
+                })
+            </script>
+        @endif
+        
 
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script>

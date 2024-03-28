@@ -14,8 +14,8 @@
                 <div class="card-body">
                     <div class="row mb-2">
                         <div class="col-sm-5">
-                            <a href="{{ route('admin.report.monthly_report.create') }}" class="btn btn-danger mb-2"><i
-                                    class="mdi mdi-plus-circle me-2"></i> {{ __('main.add') }}</a>
+                            <a href="{{ route('admin.report.monthly_report.create') }}" class="btn btn-danger mb-2">
+                                <i class="mdi mdi-plus-circle me-2"></i> {{ __('main.add') }}</a>
                         </div>
                     </div>
 

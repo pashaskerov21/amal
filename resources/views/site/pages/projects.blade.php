@@ -8,4 +8,5 @@
     @endpush
 
     @include('site.components.page_heading')
+    @include('site.sections.projects.project_main')
 @endsection

@@ -56,7 +56,7 @@
                     @foreach ($menues as $menu)
                         <li class="nav-item">
                             @if (Session('lang') === 'az')
-                                <a href="{{ $menu->getTranslate->where('lang', Session('lang'))->first()->slug }}"
+                                <a href="/{{ $menu->getTranslate->where('lang', Session('lang'))->first()->slug }}"
                                     class="nav-link">
                                     {{ $menu->getTranslate->where('lang', Session('lang'))->first()->title }}
                                 </a>
