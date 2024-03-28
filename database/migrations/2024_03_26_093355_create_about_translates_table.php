@@ -19,6 +19,7 @@ return new class extends Migration
             $table->text('home_text')->nullable();
             $table->text('report_title')->nullable();
             $table->text('report_text')->nullable();
+            $table->text('how_we_work_text')->nullable();
             $table->timestamps();
         });
     }

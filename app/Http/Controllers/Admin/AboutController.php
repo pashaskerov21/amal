@@ -45,6 +45,7 @@ class AboutController extends Controller
                 'home_text' => $request['home_text'][$i],
                 'report_title' => $request['report_title'][$i],
                 'report_text' => $request['report_text'][$i],
+                'how_we_work_text' => $request['how_we_work_text'][$i],
             ]);
         }
         return redirect()->route('admin.about.index')->with('update_message', 'true');

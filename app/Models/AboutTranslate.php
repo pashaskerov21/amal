@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class AboutTranslate extends Model
 {
     use HasFactory;
-    protected $fillable = ['about_id', 'lang', 'home_title', 'home_text', 'report_title', 'report_text',];
+    protected $fillable = ['about_id', 'lang', 'home_title', 'home_text', 'report_title', 'report_text','how_we_work_text'];
 }

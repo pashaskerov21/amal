@@ -8,4 +8,11 @@
     @endpush
 
     @include('site.components.page_heading')
+    <section class="work">
+        <div class="container">
+            <div class="txt">
+                {!! $about->getTranslate->where('lang', Session('lang'))->first()->how_we_work_text !!}
+            </div>
+        </div>
+    </section>
 @endsection

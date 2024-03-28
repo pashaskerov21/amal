@@ -43,6 +43,7 @@ return [
     "main_content" => "Əsas məzmun",
     "team" => "Komanda",
     "our_team" => "Komandamız",
+    "gallery" => "Qalereya",
     
 
     "title" => "Başlıq",
@@ -85,4 +86,5 @@ return [
     "subscribe_text" => "Yeniliklərdən xəbərdar olmaq üçün Abonə OL",
     "subscribe" => "Abunə ol",
     "enter_email_address" => "E-mail adresinizi daxil edin",
+    "how_we_work_text" => "Necə işləyirik mətni"
 ];

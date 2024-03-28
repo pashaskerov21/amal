@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\AboutTextController;
 use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\BannerController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\GalleryController;
 use App\Http\Controllers\Admin\MenuController;
 use App\Http\Controllers\Admin\Report\AnnualReportController;
 use App\Http\Controllers\Admin\Report\MonthlyReportController;
@@ -139,6 +140,16 @@ Route::middleware([LocaleMiddleware::class])->group(function () {
                         Route::post('/store', [MonthlyReportController::class, 'store'])->name('store');
                         Route::post('/update/{id}', [MonthlyReportController::class, 'update'])->name('update');
                     });
+                });
+
+                Route::group(['prefix' => 'gallery', 'as' => 'gallery.'], function () {
+                    Route::get('/', [GalleryController::class, 'index'])->name('index');
+                    Route::get('/create', [GalleryController::class, 'create'])->name('create');
+                    Route::get('/edit/{id}', [GalleryController::class, 'edit'])->name('edit');
+                    Route::get('/delete/{id}', [GalleryController::class, 'destroy'])->name('delete');
+                    Route::post('/store', [GalleryController::class, 'store'])->name('store');
+                    Route::post('/update/{id}', [GalleryController::class, 'update'])->name('update');
+                    Route::post('/sort', [GalleryController::class, 'sort'])->name('sort');
                 });
             });
         });

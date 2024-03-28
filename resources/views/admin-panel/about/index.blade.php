@@ -37,11 +37,16 @@
                                             <textarea name="home_text[]" hidden></textarea>
                                         </div>
                                         <div class="mb-3">
-                                            <label class="form-label">{{ __('main.report_title') }} {{$translate->lang}}</label>
+                                            <label class="form-label">{{ __('main.how_we_work_text') }} {{$translate->lang}}</label>
+                                            <div class="quill-editor" style="height: 300px;">{!! $translate->how_we_work_text !!}</div>
+                                            <textarea name="how_we_work_text[]" hidden></textarea>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">{{ __('main.about') }} {{ __('main.report_title') }} {{$translate->lang}}</label>
                                             <input type="text" class="form-control" name="report_title[]" value="{{$translate->report_title}}">
                                         </div>
                                         <div class="mb-3">
-                                            <label class="form-label">{{ __('main.report_text') }} {{$translate->lang}}</label>
+                                            <label class="form-label">{{ __('main.about') }} {{ __('main.report_text') }} {{$translate->lang}}</label>
                                             <textarea class="form-control" name="report_text[]">{{$translate->report_text}}</textarea>
                                         </div>
                                     </div>

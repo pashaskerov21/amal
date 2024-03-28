@@ -27,7 +27,7 @@ class MonthlyReportController extends Controller
         $years = ReportYear::where('destroy', 0)->orderByDesc('value')->get();
         $path = '/admin/report/monthly_report/create';
         $lang = ['az' => $path, 'en' => '/en' . $path, 'ru' => '/ru' . $path];
-        return view('admin-panel.report.monthly_report.add', compact('lang', 'services', 'months','years'));
+        return view('admin-panel.report.monthly_report.add', compact('lang', 'services', 'months', 'years'));
     }
     public function store(MonthlyReportRequest $request)
     {
@@ -74,60 +74,34 @@ class MonthlyReportController extends Controller
         $years = ReportYear::where('destroy', 0)->orderByDesc('value')->get();
         $path = '/admin/report/monthly_report/edit/' . $id;
         $lang = ['az' => $path, 'en' => '/en' . $path, 'ru' => '/ru' . $path];
-        return view('admin-panel.report.monthly_report.edit', compact('lang', 'monthly_report', 'services', 'months','years'));
+        return view('admin-panel.report.monthly_report.edit', compact('lang', 'monthly_report', 'services', 'months', 'years'));
     }
     public function update(MonthlyReportRequest $request, string $id)
     {
-        $monthlyReportExist = MonthlyReport::where([
-            'destroy' => 0,
-            'service_id' => $request['service_id'],
-            'year' => $request['year'],
-            'month' => $request['month'],
-        ])->first();
-        if ($monthlyReportExist && $monthlyReportExist->id != $id) {
-            return redirect()->back()->with('monthly_report_exist_message', 'true');
-        }
+        // $monthlyReportExist = MonthlyReport::where([
+        //     'destroy' => 0,
+        //     'service_id' => $request['service_id'],
+        //     'year' => $request['year'],
+        //     'month' => $request['month'],
+        // ])->first();
+        // if ($monthlyReportExist && $monthlyReportExist->id != $id) {
+        //     return redirect()->back()->with('monthly_report_exist_message', 'true');
+        // }
         $monthly_report = MonthlyReport::findOrFail($id);
-        
+
         $annualReport = AnnualReport::where([
             'destroy' => 0,
             'service_id' => $request['service_id'],
             'year' => $request['year'],
         ])->first();
-        $annualReport_service = AnnualReport::where([
-            'destroy' => 0,
-            'service_id' => $monthly_report['service_id'],
-        ])->first();
-        $annualReport_year = AnnualReport::where([
-            'destroy' => 0,
-            'year' => $monthly_report['year'],
-        ])->first();
-        if($monthly_report['service_id'] != $request['service_id']){
-            $annualReport_service->main_value -= $monthly_report['main_value'];
-            $annualReport_service->total_amount -= $monthly_report['total_amount'];
-        }
-        if($annualReport_year['service_id'] != $request['service_id']){
-            $annualReport_year->main_value -= $monthly_report['main_value'];
-            $annualReport_year->total_amount -= $monthly_report['total_amount'];
-        }
-        if ($annualReport) {
-            $annualReport->main_value -= $monthly_report['main_value'];
-            $annualReport->total_amount -= $monthly_report['total_amount'];
-            $annualReport->main_value += $request['main_value'];
-            $annualReport->total_amount += $request['total_amount'];
-            $annualReport->save();
-        } else {
-            AnnualReport::create([
-                'service_id' => $request['service_id'],
-                'year' => $request['year'],
-                'main_value' => $request['main_value'],
-                'total_amount' => $request['total_amount'],
-            ]);
-        }
+
+        $annualReport->main_value -= $monthly_report['main_value'];
+        $annualReport->total_amount -= $monthly_report['total_amount'];
+        $annualReport->main_value += $request['main_value'];
+        $annualReport->total_amount += $request['total_amount'];
+        $annualReport->save();
+        
         $monthly_report->update([
-            'service_id' => $request['service_id'],
-            'year' => $request['year'],
-            'month' => $request['month'],
             'main_value' => $request['main_value'],
             'total_amount' => $request['total_amount'],
         ]);

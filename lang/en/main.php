@@ -43,6 +43,7 @@ return [
     "main_content" => "Main content",
     "team" => "Team",
     "our_team" => "Our team",
+    "gallery" => "Gallery",
 
     
     "title" => "Title",
@@ -84,4 +85,5 @@ return [
     "subscribe_text" => "Subscribe to stay updated",
     "subscribe" => "Subscribe",
     "enter_email_address" => "Enter your e-mail address",
+    "how_we_work_text" => "How we work text"
 ];

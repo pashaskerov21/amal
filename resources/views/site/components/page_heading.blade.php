@@ -1,4 +1,4 @@
-<div class="breadcrumb" style="background-image: url('{{asset('front-assets/images/breadcrumb-bg.png')}}');">
+<div class="breadcrumb mb-0" style="background-image: url('{{asset('front-assets/images/breadcrumb-bg.png')}}');">
     <div class="content">
         <div class="breadcrumb-title">{{$meta_title}}</div>
         <ul>

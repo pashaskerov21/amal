@@ -57,6 +57,66 @@
             background-color: transparent !important;
             color: #212529 !important;
         }
+        .txt * {
+            background-color: transparent !important;
+            color: #212529 !important;
+        }
+    </style>
+    <style>
+        .gallery_section {
+            widows: 100%;
+            padding: 40px 0;
+        }
+    
+        .gallery_item {
+            display: block;
+            width: 100%;
+            max-width: 100%;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            position: relative;
+        }
+    
+        .gallery_item .zoom {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #7BC18F;
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            opacity: 0;
+            transition: 0.3s ease;
+        }
+    
+        .gallery_item:hover .zoom {
+            opacity: 1;
+        }
+    
+        @media (min-width: 768px) {
+            .gallery_item {
+                width: 48%;
+            }
+        }
+    
+        @media (min-width: 1200px) {
+            .gallery_item {
+                width: 31%;
+            }
+        }
+    
+        .gallery_item img {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 10px;
+        }
     </style>
 </head>
 
@@ -87,6 +147,8 @@
 
     <script src="{{ asset('front-assets/assets/jquery/jquery.min.js') }}"></script>
     @stack('report_js')
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+    @stack('gallery_grid')
     <script src="{{ asset('front-assets/assets/bootstrap/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('front-assets/assets/swiper/swiper-bundle.min.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>

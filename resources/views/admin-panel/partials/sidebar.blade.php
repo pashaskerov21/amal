@@ -91,6 +91,12 @@
                 </div>
             </li>
             <li class="side-nav-item">
+                <a href="{{ route('admin.gallery.index') }}" class="side-nav-link">
+                    <i class="ri-image-line"></i>
+                    <span> {{__('main.gallery')}} </span>
+                </a>
+            </li>
+            <li class="side-nav-item">
                 <a href="{{ route('admin.menu.index') }}" class="side-nav-link">
                     <i class="fa-solid fa-bars"></i>
                     <span> {{__('main.menu')}} </span>

@@ -8,6 +8,7 @@ use App\Models\AboutReport;
 use App\Models\AboutText;
 use App\Models\AnnualReport;
 use App\Models\Banner;
+use App\Models\Gallery;
 use App\Models\MenuTranslate;
 use App\Models\MonthlyReport;
 use App\Models\Service;
@@ -58,7 +59,8 @@ class SiteController extends Controller
     public function gallery(){
         $lang = ['az' => '/qalereya','en' => '/en/gallery', 'ru' => '/ru/galereia'];
         $meta_title = MenuTranslate::where('menu_id',4)->where('lang', Session('lang'))->first()->title;
-        return view('site.pages.gallery', compact('lang','meta_title'));
+        $gallery_items = Gallery::where('destroy', 0)->orderBy('order')->get();
+        return view('site.pages.gallery', compact('lang','meta_title','gallery_items'));
     }
     public function report(){
         $lang = ['az' => '/hesabat','en' => '/en/report', 'ru' => '/ru/otcet'];
@@ -71,7 +73,8 @@ class SiteController extends Controller
     public function how_we_work(){
         $lang = ['az' => '/nece-isleyirik','en' => '/en/how-we-work', 'ru' => '/ru/kak-my-rabotaem'];
         $meta_title = MenuTranslate::where('menu_id',6)->where('lang', Session('lang'))->first()->title;
-        return view('site.pages.how_we_work', compact('lang','meta_title'));
+        $about = About::findOrFail(1);
+        return view('site.pages.how_we_work', compact('lang','meta_title','about'));
     }
     public function we_in_media(){
         $lang = ['az' => '/mediada-biz','en' => '/en/we-in-the-media', 'ru' => '/ru/my-v-smi'];
