@@ -45,6 +45,7 @@ return [
     "our_team" => "Our team",
     "gallery" => "Gallery",
     "projects" => "Our projects",
+    "blogs" => "Blogs",
 
     
     "title" => "Title",
@@ -97,9 +98,12 @@ return [
     "iane_et" => "Donate",
     "konullu_ol" => "Volunteer",
     "etrafli_bax" => "See more",
+    "etrafli_baxis" => "Detailed view",
+    "etrafli_oxu" => "Read more",
     "edilen_yardimlarin_sayi" => "Number of aid provided",
     "subscribe_text" => "Subscribe to stay updated",
     "subscribe" => "Subscribe",
     "enter_email_address" => "Enter your e-mail address",
-    "how_we_work_text" => "How we work text"
+    "how_we_work_text" => "How we work text",
+    "mediada_biz" => "We in the media",
 ];

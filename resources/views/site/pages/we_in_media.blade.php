@@ -8,5 +8,6 @@
     @endpush
 
     @include('site.components.page_heading')
+    @include('site.sections.media.media_main')
 @endsection
 

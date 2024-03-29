@@ -8,6 +8,8 @@ use App\Models\AboutReport;
 use App\Models\AboutText;
 use App\Models\AnnualReport;
 use App\Models\Banner;
+use App\Models\Blog;
+use App\Models\BlogTranslate;
 use App\Models\Gallery;
 use App\Models\MenuTranslate;
 use App\Models\MonthlyReport;
@@ -28,7 +30,9 @@ class SiteController extends Controller
         $about_reports = AboutReport::where('destroy', 0)->orderBy('order')->get();
         $projects = Project::where('destroy', 0)->orderBy('order')->get();
         $projects_lang = ['az' => '/layihelerimiz', 'en' => '/en/our-projects', 'ru' => '/ru/nasi-proekty'];
-        return view('site.pages.home', compact('lang', 'banners', 'services', 'about', 'about_reports', 'projects', 'projects_lang'));
+        $blogs = Blog::where('destroy', 0)->orderBy('order')->get();
+        $blogs_lang = ['az' => '/mediada-biz', 'en' => '/en/we-in-the-media', 'ru' => '/ru/my-v-smi'];
+        return view('site.pages.home', compact('lang', 'banners', 'services', 'about', 'about_reports', 'projects', 'projects_lang','blogs','blogs_lang'));
     }
     public function donate()
     {
@@ -115,7 +119,28 @@ class SiteController extends Controller
     {
         $lang = ['az' => '/mediada-biz', 'en' => '/en/we-in-the-media', 'ru' => '/ru/my-v-smi'];
         $meta_title = MenuTranslate::where('menu_id', 7)->where('lang', Session('lang'))->first()->title;
-        return view('site.pages.we_in_media', compact('lang', 'meta_title'));
+        $blogs = Blog::where('destroy', 0)->orderBy('order')->get();
+        return view('site.pages.we_in_media', compact('lang', 'meta_title','blogs'));
+    }
+    public function media_inner($slug)
+    {
+        $blog_translate = BlogTranslate::where([
+            'slug' => $slug,
+            'destroy' => 0,
+        ])->first();
+        if ($blog_translate) {
+            $blog_translates = BlogTranslate::where('blog_id', $blog_translate->blog_id)->get();
+            $blog = Blog::where([
+                'id' => $blog_translate->blog_id,
+                'destroy' => 0,
+            ])->first();
+            $lang = [
+                'az' => '/mediada-biz/'.$blog_translates->where('lang','az')->first()->slug, 
+                'en' => '/en/we-in-the-media/'.$blog_translates->where('lang','en')->first()->slug, 
+                'ru' => '/ru/my-v-smi/'.$blog_translates->where('lang','ru')->first()->slug
+            ];
+            return view('site.pages.media_inner', compact('lang', 'blog', 'blog_translate'));
+        }
     }
     public function contact()
     {

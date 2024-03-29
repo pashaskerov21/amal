@@ -45,6 +45,7 @@ return [
     "our_team" => "Komandamız",
     "gallery" => "Qalereya",
     "projects" => "Layihələrimiz",
+    "blogs" => "Bloqlar",
     
 
     "title" => "Başlıq",
@@ -98,9 +99,12 @@ return [
     "iane_et" => "İanə et",
     "konullu_ol" => "Könüllü ol",
     "etrafli_bax" => "Ətraflı bax",
+    "etrafli_baxis" => "Ətraflı baxış",
+    "etrafli_oxu" => "Ətraflı oxu",
     "edilen_yardimlarin_sayi" => "Edilən yardımların sayı",
     "subscribe_text" => "Yeniliklərdən xəbərdar olmaq üçün Abonə OL",
     "subscribe" => "Abunə ol",
     "enter_email_address" => "E-mail adresinizi daxil edin",
-    "how_we_work_text" => "Necə işləyirik mətni"
+    "how_we_work_text" => "Necə işləyirik mətni",
+    "mediada_biz" => "Mediada biz",
 ];

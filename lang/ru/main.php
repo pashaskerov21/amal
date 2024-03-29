@@ -45,6 +45,7 @@ return [
     "our_team" => "Наша команда",
     "gallery" => "Галерея",
     "projects" => "Наши проекты",
+    "blogs" => "Блоги",
 
 
     "title" => "Заголовок",
@@ -97,9 +98,12 @@ return [
     "iane_et" => "Пожертвуйте",
     "konullu_ol" => "Волонтер",
     "etrafli_bax" => "Узнать больше",
+    "etrafli_baxis" => "Детальный вид",
+    "etrafli_oxu" => "Читать далее",
     "edilen_yardimlarin_sayi" => "Количество оказанной помощи",
     "subscribe_text" => "Подписаться, чтобы оставаться в курсе",
     "subscribe" => "Подписаться",
     "enter_email_address" => "Введите свой электронный адрес",
-    "how_we_work_text" => "Как мы работаем текст"
+    "how_we_work_text" => "Как мы работаем текст",
+    "mediada_biz" => "Мы в СМИ",
 ];

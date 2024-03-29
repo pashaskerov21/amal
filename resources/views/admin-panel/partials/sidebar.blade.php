@@ -78,7 +78,7 @@
             </li>
             <li class="side-nav-item">
                 <a data-bs-toggle="collapse" href="#sidebar-report" class="side-nav-link">
-                    <i class="ri-image-line"></i>
+                    <i class="fa-solid fa-list-check"></i>
                     <span> {{__('main.report')}} </span>
                     <span class="menu-arrow"></span>
                 </a>
@@ -95,6 +95,12 @@
                         </li>
                     </ul>
                 </div>
+            </li>
+            <li class="side-nav-item">
+                <a href="{{ route('admin.blogs.index') }}" class="side-nav-link">
+                    <i class="ri-image-line"></i>
+                    <span> {{__('main.blogs')}} </span>
+                </a>
             </li>
             <li class="side-nav-item">
                 <a href="{{ route('admin.gallery.index') }}" class="side-nav-link">

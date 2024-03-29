@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\AboutReportController;
 use App\Http\Controllers\Admin\AboutTextController;
 use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\BannerController;
+use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\GalleryController;
 use App\Http\Controllers\Admin\MenuController;
@@ -164,6 +165,16 @@ Route::middleware([LocaleMiddleware::class])->group(function () {
                     Route::post('/sort', [ProjectController::class, 'sort'])->name('sort');
                     Route::post('/gallery_sort', [ProjectController::class, 'gallery_sort'])->name('gallery_sort');
                 });
+
+                Route::group(['prefix' => 'blogs', 'as' => 'blogs.'], function () {
+                    Route::get('/', [BlogController::class, 'index'])->name('index');
+                    Route::get('/create', [BlogController::class, 'create'])->name('create');
+                    Route::get('/edit/{id}', [BlogController::class, 'edit'])->name('edit');
+                    Route::get('/delete/{id}', [BlogController::class, 'destroy'])->name('delete');
+                    Route::post('/store', [BlogController::class, 'store'])->name('store');
+                    Route::post('/update/{id}', [BlogController::class, 'update'])->name('update');
+                    Route::post('/sort', [BlogController::class, 'sort'])->name('sort');
+                });
             });
         });
 
@@ -208,6 +219,10 @@ Route::middleware([LocaleMiddleware::class])->group(function () {
         Route::get('/mediada-biz', [SiteController::class, 'we_in_media'])->name('we_in_media_az');
         Route::get('/we-in-the-media', [SiteController::class, 'we_in_media'])->name('we_in_media_en');
         Route::get('/my-v-smi', [SiteController::class, 'we_in_media'])->name('we_in_media_ru');
+
+        Route::get('/mediada-biz/{slug}', [SiteController::class, 'media_inner'])->name('media_inner_az');
+        Route::get('/we-in-the-media/{slug}', [SiteController::class, 'media_inner'])->name('media_inner_en');
+        Route::get('/my-v-smi/{slug}', [SiteController::class, 'media_inner'])->name('media_inner_ru');
 
         Route::get('/elaqe', [SiteController::class, 'contact'])->name('contact_az');
         Route::get('/contact', [SiteController::class, 'contact'])->name('contact_en');

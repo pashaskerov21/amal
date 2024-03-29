@@ -123,7 +123,7 @@
     </style>
     <style>
         .project_progress_bar{
-            widows: 100%;
+            width: 100%;
             position: relative;
             height: 30px;
             margin: 15px 0;
