@@ -43,7 +43,9 @@
             <div class="title1">
                 {{$project_translate->title}}
             </div>
-            {!!$project_translate->main_text!!}
+            <div class="txt">
+                {!!$project_translate->main_text!!}
+            </div>
         </div>
 
     </div>

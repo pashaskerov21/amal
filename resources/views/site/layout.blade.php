@@ -8,6 +8,7 @@
     
     <link rel="stylesheet" href="{{ asset('front-assets/assets/bootstrap/css/bootstrap.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('front-assets/sass/style.css') }}" />
+    <link rel="stylesheet" href="{{ asset('front-assets/sass/update.css') }}" />
     <link rel="stylesheet" href="{{ asset('front-assets/assets/swiper/swiper-bundle.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('front-assets/assets/animate_css/animate.min.css') }}">
     <link rel="stylesheet" href="https://cdn.givecloud.co/npm/odometer@0.4.8/themes/odometer-theme-default.css">
@@ -50,121 +51,6 @@
         <meta property="og:locale:alternate" content="en_GB">
         <meta property="og:locale:alternate" content="ru_RU">
     @endif
-
-
-    <style>
-        .about-text * {
-            background-color: transparent !important;
-            color: #212529 !important;
-        }
-        .txt * {
-            background-color: transparent !important;
-            color: #212529 !important;
-        }
-    </style>
-    <style>
-        .gallery_section {
-            width: 100%;
-            padding: 40px 0;
-        }
-        .gallery_grid{
-            width: 100%
-        }
-    
-        .gallery_item {
-            display: block;
-            width: 100%;
-            max-width: 100%;
-            margin-bottom: 20px;
-            border-radius: 10px;
-            position: relative;
-        }
-    
-        .gallery_item .zoom {
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            background-color: #7BC18F;
-            color: #fff;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 50px;
-            height: 50px;
-            opacity: 0;
-            transition: 0.3s ease;
-        }
-    
-        .gallery_item:hover .zoom {
-            opacity: 1;
-        }
-    
-        @media (min-width: 768px) {
-            .gallery_item {
-                width: 48%;
-            }
-        }
-    
-        @media (min-width: 1200px) {
-            .gallery_item {
-                width: 31%;
-            }
-        }
-    
-        .gallery_item img {
-            width: 100%;
-            max-width: 100%;
-            height: auto;
-            object-fit: cover;
-            border-radius: 10px;
-        }
-    </style>
-    <style>
-        .project_progress_bar{
-            width: 100%;
-            position: relative;
-            height: 30px;
-            margin: 15px 0;
-        }
-        .project_progress_bar .progress_1{
-            position: absolute;
-            top: 50%;
-            left: 0;
-            transform: translateY(-50%);
-            width: 100%;
-            height: 10px;
-            background-color: #D9D9D9;
-            z-index: 1;
-        }
-        .project_progress_bar .progress_2{
-            position: absolute;
-            top: 50%;
-            left: 0;
-            transform: translateY(-50%);
-            height: 10px;
-            background-color: #0E3654;
-            z-index: 2;
-        }
-        .progress_result{
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 3;
-            width: 56px;
-            height: 30px;
-            background-color: #7BC18F;
-            color: #fff;
-            font-family: Poppins, sans-serif;
-            font-weight: 700;
-            letter-spacing: 1px;
-            font-size: 16px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-    </style>
 </head>
 
 <body>

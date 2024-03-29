@@ -24,7 +24,7 @@
                         <div class="progress_1">
                             @foreach ($about_reports as $report)
                                 <div class="column">
-                                    <span class="odometer" id="odometer_{{$report->id}}" data-count="{{$report->value}}">{{$report->value}}</span>+
+                                    <span class="odometer" data-count="{{$report->value}}">{{$report->value}}</span>+
                                     <span class="txt">{{$report->getTranslate->where('lang', Session('lang'))->first()->title}}</span>
                                 </div>
                             @endforeach

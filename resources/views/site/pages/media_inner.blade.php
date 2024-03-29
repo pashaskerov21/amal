@@ -10,4 +10,5 @@
     @endpush
 
     @include('site.components.page_heading_blog')
+    @include('site.sections.media.media_inner')
 @endsection

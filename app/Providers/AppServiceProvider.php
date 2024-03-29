@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Models\Menu;
+use App\Models\Partner;
 use App\Models\Setting;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\View;
@@ -35,12 +36,14 @@ class AppServiceProvider extends ServiceProvider
             $menuCountGroup1 = (int) ceil($menuCount / 2);
             $menues_1 = $menues->take($menuCountGroup1);
             $menues_2 = $menues->slice($menuCountGroup1);
+            $partners = Partner::where('destroy', 0)->orderBy('order')->get();
 
             $view->with([
                 'settings' => $settings,
                 'menues' => $menues,
                 'menues_1' => $menues_1,
                 'menues_2' => $menues_2,
+                'partners' => $partners,
             ]);
         });
     }

@@ -46,6 +46,7 @@ return [
     "gallery" => "Gallery",
     "projects" => "Our projects",
     "blogs" => "Blogs",
+    "partners" => "Partners",
 
     
     "title" => "Title",

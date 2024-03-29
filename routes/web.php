@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\GalleryController;
 use App\Http\Controllers\Admin\MenuController;
+use App\Http\Controllers\Admin\PartnerController;
 use App\Http\Controllers\Admin\ProjectController;
 use App\Http\Controllers\Admin\Report\AnnualReportController;
 use App\Http\Controllers\Admin\Report\MonthlyReportController;
@@ -174,6 +175,16 @@ Route::middleware([LocaleMiddleware::class])->group(function () {
                     Route::post('/store', [BlogController::class, 'store'])->name('store');
                     Route::post('/update/{id}', [BlogController::class, 'update'])->name('update');
                     Route::post('/sort', [BlogController::class, 'sort'])->name('sort');
+                });
+
+                Route::group(['prefix' => 'partners', 'as' => 'partners.'], function () {
+                    Route::get('/', [PartnerController::class, 'index'])->name('index');
+                    Route::get('/create', [PartnerController::class, 'create'])->name('create');
+                    Route::get('/edit/{id}', [PartnerController::class, 'edit'])->name('edit');
+                    Route::get('/delete/{id}', [PartnerController::class, 'destroy'])->name('delete');
+                    Route::post('/store', [PartnerController::class, 'store'])->name('store');
+                    Route::post('/update/{id}', [PartnerController::class, 'update'])->name('update');
+                    Route::post('/sort', [PartnerController::class, 'sort'])->name('sort');
                 });
             });
         });

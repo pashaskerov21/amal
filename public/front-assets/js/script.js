@@ -7,9 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
       $(".header-bottom").removeClass("show");
     })
     $('[data-fancybox]').fancybox({
-      buttons: [
-        'close'
-      ],
+      buttons: ['close'],
       wheel: false,
       transitionEffect: "slide",
       loop: true,

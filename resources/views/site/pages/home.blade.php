@@ -21,6 +21,9 @@
         @include('site.sections.projects.project_home')
     @endif
     @if ($blogs->count() > 0)
-    @include('site.sections.media.media_home')
-@endif
+        @include('site.sections.media.media_home')
+    @endif
+    @if ($partners->count() > 0)
+        @include('site.sections.partners')
+    @endif
 @endsection

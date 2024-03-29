@@ -46,6 +46,7 @@ return [
     "gallery" => "Qalereya",
     "projects" => "Layihələrimiz",
     "blogs" => "Bloqlar",
+    "partners" => "Tərəfdaşlar",
     
 
     "title" => "Başlıq",
