@@ -29,6 +29,7 @@ return [
     "incorrect_current_password" => "The current password is incorrect",
     "yes" => "Yes",
     "no" => "No",
+    "search" => "Search",
 
     "settings" => "Settings",
     "menu" => "Menu",

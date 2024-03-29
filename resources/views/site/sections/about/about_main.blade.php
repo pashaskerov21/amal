@@ -1,4 +1,4 @@
-<section class="about">
+<section class="about py-5">
     <div class="container">
         <div class="general-title">
             <div class="title">{{ __('main.about') }}</div>

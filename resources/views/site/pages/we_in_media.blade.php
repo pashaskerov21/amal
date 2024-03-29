@@ -8,6 +8,8 @@
     @endpush
 
     @include('site.components.page_heading')
-    @include('site.sections.media.media_main')
+    @if ($blogs->count() > 0)
+        @include('site.sections.media.media_main')
+    @endif
 @endsection
 

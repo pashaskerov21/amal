@@ -59,7 +59,7 @@ button {
   border: none;
   outline: none;
   width: 100%;
-  color: #C0C0C0;
+  color: #212529;
 }
 .general-header .form-group input::-moz-placeholder {
   color: #C0C0C0;

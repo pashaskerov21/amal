@@ -10,9 +10,9 @@
                     </div>
                 </div>
                 <div class="col-xl-5 col-lg-6 d-lg-block d-none">
-                    <form action="">
+                    <form action="{{ route('search') }}" method="GET" autocomplete="off">
                         <div class="form-group">
-                            <input type="text" placeholder="Axtar">
+                            <input type="text" placeholder="{{ __('main.search') }}" name="query" required>
                             <button type="submit">
                                 <img src="{{ asset('front-assets/images/search.svg') }}" alt="search">
                             </button>
@@ -21,8 +21,8 @@
                 </div>
                 <div class="col-lg-4 col-6 d-flex justify-content-end">
                     <div class="header-button-group">
-                        <a href="{{route('donate_'.Session('lang'))}}">{{ __('main.iane_et') }}</a>
-                        <a href="{{route('volunteer_'.Session('lang'))}}">{{ __('main.konullu_ol') }}</a>
+                        <a href="{{ route('donate_' . Session('lang')) }}">{{ __('main.iane_et') }}</a>
+                        <a href="{{ route('volunteer_' . Session('lang')) }}">{{ __('main.konullu_ol') }}</a>
                     </div>
                     @include('site.components.language')
                     <div class="menu-icon">
@@ -35,11 +35,12 @@
         </div>
         <div class="header-bottom">
             <div class="d-md-flex d-lg-none align-items-center gap-3 mb-3">
-                <form action="">
+                <form action="{{ route('search') }}" method="GET" autocomplete="off">
                     <div class="form-group">
-                        <input type="text" placeholder="Axtar">
-                        <button type="submit"><img src="{{ asset('front-assets/images/search.svg') }}"
-                                alt="search"></button>
+                        <input type="text" placeholder="{{ __('main.search') }}" name="query" required>
+                        <button type="submit">
+                            <img src="{{ asset('front-assets/images/search.svg') }}" alt="search">
+                        </button>
                     </div>
                 </form>
                 <div class="mobile-menu-close">
@@ -71,8 +72,8 @@
                 </ul>
             </nav>
             <div class="header-button-group mt-3">
-                <a href="{{route('donate_'.Session('lang'))}}">{{ __('main.iane_et') }}</a>
-                <a href="{{route('volunteer_'.Session('lang'))}}">{{ __('main.konullu_ol') }}</a>
+                <a href="{{ route('donate_' . Session('lang')) }}">{{ __('main.iane_et') }}</a>
+                <a href="{{ route('volunteer_' . Session('lang')) }}">{{ __('main.konullu_ol') }}</a>
             </div>
             @include('site.components.language')
         </div>

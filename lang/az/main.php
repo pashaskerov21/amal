@@ -29,6 +29,7 @@ return [
     "incorrect_current_password" => "Mövcud şifrə yanlışdır",
     "yes" => "Hə",
     "no" => "Yox",
+    "search" => "Axtarış",
 
     "settings" => "Tənzimləmələr",
     "menu" => "Menyu",

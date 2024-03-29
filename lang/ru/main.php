@@ -29,6 +29,7 @@ return [
     "incorrect_current_password" => "Текущий пароль неверен",
     "yes" => "Да",
     "no" => "Нет",
+    "search" => "Поиск",
 
     "settings" => "Настройки",
     "menu" => "Меню",

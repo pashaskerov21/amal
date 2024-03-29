@@ -21,6 +21,7 @@ use App\Http\Controllers\Admin\SubscribeController;
 use App\Http\Controllers\Admin\TeamController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\VolunterController;
+use App\Http\Controllers\Site\SearchController;
 use App\Http\Controllers\Site\SiteController;
 use App\Http\Middleware\IsLoginMiddleware;
 use App\Http\Middleware\LocaleMiddleware;
@@ -208,6 +209,7 @@ Route::middleware([LocaleMiddleware::class])->group(function () {
         });
 
         Route::get('/', [SiteController::class, 'home'])->name('home');
+        Route::get('/search', [SearchController::class, 'search'])->name('search');
 
         Route::get('/iane-et', [SiteController::class, 'donate'])->name('donate_az');
         Route::get('/donate', [SiteController::class, 'donate'])->name('donate_en');

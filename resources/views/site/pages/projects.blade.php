@@ -8,5 +8,7 @@
     @endpush
 
     @include('site.components.page_heading')
-    @include('site.sections.projects.project_main')
+    @if ($projects->count() > 0)
+        @include('site.sections.projects.project_main')        
+    @endif
 @endsection
