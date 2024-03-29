@@ -47,6 +47,8 @@ return [
     "projects" => "Layihələrimiz",
     "blogs" => "Bloqlar",
     "partners" => "Tərəfdaşlar",
+    "subscribers" => "Abunəçilər",
+    "volunteers" => "Könüllülər",
     
 
     "title" => "Başlıq",
@@ -91,7 +93,15 @@ return [
     "main_text" => "Əsas mətn",
     "meta_description" => "Meta təsvir",
     "percent" => "Faiz",
-    
+    "send" => "Göndər",
+    "ad_soyad" => "Ad, soyad",
+    "note" => "Qeyd",
+    "birthday" => "Təvəllüd",
+    "male" => "Kişi",
+    "female" => "Qadın",
+    "upload_photo" => "Şəkil yüklə",
+    "gender" => "Cins",
+
 
 
     
@@ -108,4 +118,10 @@ return [
     "enter_email_address" => "E-mail adresinizi daxil edin",
     "how_we_work_text" => "Necə işləyirik mətni",
     "mediada_biz" => "Mediada biz",
+    "donate_messages" => "Ianə mesajları",
+    "xidmet_secin" => "Xidmət seçin",
+
+    "subscriber_store_success" => "",
+    "donate_message_store_success" => "",
+    "volunteer_message_store_success" => "",
 ];

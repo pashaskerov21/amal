@@ -38,7 +38,8 @@ class SiteController extends Controller
     {
         $lang = ['az' => '/iane-et', 'en' => '/en/donate', 'ru' => '/ru/pozertvuite'];
         $meta_title = __('main.iane_et');
-        return view('site.pages.donate', compact('lang', 'meta_title'));
+        $services = Service::where('destroy', 0)->orderBy('order')->get();
+        return view('site.pages.donate', compact('lang', 'meta_title','services'));
     }
     public function volunteer()
     {

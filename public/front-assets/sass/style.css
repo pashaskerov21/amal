@@ -1322,14 +1322,14 @@ button {
   height: 60px;
   border: 1px solid #C0C0C0;
   font-size: 18px;
-  color: #C0C0C0;
+  color: #212529;
   font-weight: 400;
   line-height: 30px;
 }
 .form-section .form-group input:focus {
   border-color: #0E3654;
 }
-.form-section .form-group input:placeholder {
+.form-section .form-group input::placeholder {
   color: #C0C0C0;
 }
 .form-section .form-group input.radio-input, .form-section .form-group input.type-input {
@@ -1363,14 +1363,14 @@ button {
   resize: none;
   border: 1px solid #C0C0C0;
   font-size: 18px;
-  color: #C0C0C0;
+  color: 212529;
   font-weight: 400;
   line-height: 30px;
 }
 .form-section .form-group textarea:focus {
   border-color: #0E3654;
 }
-.form-section .form-group textarea:placeholder {
+.form-section .form-group textarea::placeholder {
   color: #C0C0C0;
 }
 

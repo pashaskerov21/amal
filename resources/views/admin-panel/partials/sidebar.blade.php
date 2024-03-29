@@ -115,6 +115,24 @@
                 </a>
             </li>
             <li class="side-nav-item">
+                <a href="{{ route('admin.donate_messages.index') }}" class="side-nav-link">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span> {{__('main.donate_messages')}} </span>
+                </a>
+            </li>
+            <li class="side-nav-item">
+                <a href="{{ route('admin.volunteers.index') }}" class="side-nav-link">
+                    <i class="fa-solid fa-users"></i>
+                    <span> {{__('main.volunteers')}} </span>
+                </a>
+            </li>
+            <li class="side-nav-item">
+                <a href="{{ route('admin.subscribers.index') }}" class="side-nav-link">
+                    <i class="fa-solid fa-users"></i>
+                    <span> {{__('main.subscribers')}} </span>
+                </a>
+            </li>
+            <li class="side-nav-item">
                 <a href="{{ route('admin.menu.index') }}" class="side-nav-link">
                     <i class="fa-solid fa-bars"></i>
                     <span> {{__('main.menu')}} </span>

@@ -47,6 +47,8 @@ return [
     "projects" => "Наши проекты",
     "blogs" => "Блоги",
     "partners" => "Партнеры",
+    "subscribers" => "Подписчики",
+    "volunteers" => "Волонтёры",
 
 
     "title" => "Заголовок",
@@ -91,7 +93,14 @@ return [
     "main_text" => "Основной текст",
     "meta_description" => "Мета-описание",
     "percent" => "Процент",
-
+    "send" => "Отправлять",
+    "ad_soyad" => "Имя и фамилия",
+    "note" => "Заметка",
+    "birthday" => "Дата рождения",
+    "male" => "Мужской",
+    "female" => "Женский",
+    "upload_photo" => "Загрузить фото",
+    "gender" => "гендер",
 
     
     
@@ -107,4 +116,10 @@ return [
     "enter_email_address" => "Введите свой электронный адрес",
     "how_we_work_text" => "Как мы работаем текст",
     "mediada_biz" => "Мы в СМИ",
+    "donate_messages" => "Сообщения о пожертвованиях",
+    "xidmet_secin" => "Выберите сервис",
+
+    "subscriber_store_success" => "",
+    "donate_message_store_success" => "",
+    "volunteer_message_store_success" => "",
 ];

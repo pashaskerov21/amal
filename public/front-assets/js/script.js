@@ -2,9 +2,13 @@ document.addEventListener("DOMContentLoaded", function () {
   $(document).ready(function () {
     $(".menu-icon").click(function () {
       $(".header-bottom").addClass("show");
-    })
+    });
     $(".mobile-menu-close").click(function () {
       $(".header-bottom").removeClass("show");
+    });
+    $(".radio-label").click(function () {
+      $(".radio-label").removeClass("active");
+      $(this).addClass("active");
     })
     $('[data-fancybox]').fancybox({
       buttons: ['close'],

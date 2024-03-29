@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    
+
     <link rel="stylesheet" href="{{ asset('front-assets/assets/bootstrap/css/bootstrap.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('front-assets/sass/style.css') }}" />
     <link rel="stylesheet" href="{{ asset('front-assets/sass/update.css') }}" />
@@ -22,16 +22,19 @@
     <meta name="theme-color" content="#ffffff">
 
     @stack('meta')
-    <meta name="description" content="{{ $settings->getTranslate->where('lang', Session('lang'))->first()->description }}">
-    <link rel="author" href="{{$settings->author_url}}">
+    <meta name="description"
+        content="{{ $settings->getTranslate->where('lang', Session('lang'))->first()->description }}">
+    <link rel="author" href="{{ $settings->author_url }}">
     <meta name="author" content="{{ $settings->getTranslate->where('lang', Session('lang'))->first()->author }}">
     <meta name="keywords" content="{{ $settings->getTranslate->where('lang', Session('lang'))->first()->keywords }}">
-    <meta property="og:description" content="{{ $settings->getTranslate->where('lang', Session('lang'))->first()->description }}">
+    <meta property="og:description"
+        content="{{ $settings->getTranslate->where('lang', Session('lang'))->first()->description }}">
     <meta property="og:type" content="website">
     <meta property="og:image" content="{{ asset('front-assets/images/amal-logo-dark.svg') }}">
-    <meta name="twitter:description" content="{{ $settings->getTranslate->where('lang', Session('lang'))->first()->description }}">
+    <meta name="twitter:description"
+        content="{{ $settings->getTranslate->where('lang', Session('lang'))->first()->description }}">
     <meta name="twitter:image" content="{{ asset('front-assets/images/amal-logo-dark.svg') }}">
-    
+
 
 
     @if (Session('lang') === 'az')
@@ -65,9 +68,11 @@
                 </div>
                 <div class="col-lg-6 mb-4 mb-lg-0">
                     <div class="apply-form">
-                        <form action="">
+                        <form action="{{ route('admin.subscribers.store') }}" method="POST">
+                            @csrf
                             <div class="form-group">
-                                <input type="text" placeholder="{{ __('main.enter_email_address') }}">
+                                <input type="email" name="email" placeholder="{{ __('main.enter_email_address') }}"
+                                    required>
                                 <button>{{ __('main.subscribe') }}</button>
                             </div>
                         </form>
@@ -78,8 +83,44 @@
     </div>
     @include('site.partials.footer')
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     @stack('report_js')
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    @if (Session::has('subscriber_store_success'))
+        <script>
+            Swal.fire({
+                position: "top-end",
+                icon: "success",
+                text: "{{ __('main.subscriber_store_success') }}",
+                showConfirmButton: false,
+                timer: 1000
+            });
+        </script>
+    @endif
+    @if (Session::has('donate_message_store_success'))
+        <script>
+            Swal.fire({
+                position: "top-end",
+                icon: "success",
+                text: "{{ __('main.donate_message_store_success') }}",
+                showConfirmButton: false,
+                timer: 1000
+            })
+        </script>
+    @endif
+    @if (Session::has('volunteer_message_store_success'))
+        <script>
+            Swal.fire({
+                position: "top-end",
+                icon: "success",
+                text: "{{ __('main.volunteer_message_store_success') }}",
+                showConfirmButton: false,
+                timer: 1000
+            })
+        </script>
+    @endif
     <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
     @stack('gallery_grid')
     <script src="{{ asset('front-assets/assets/bootstrap/js/bootstrap.min.js') }}"></script>

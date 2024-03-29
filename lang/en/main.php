@@ -47,6 +47,8 @@ return [
     "projects" => "Our projects",
     "blogs" => "Blogs",
     "partners" => "Partners",
+    "subscribers" => "Subscribers",
+    "volunteers" => "Volunteers",
 
     
     "title" => "Title",
@@ -91,6 +93,14 @@ return [
     "main_text" => "Main text",
     "meta_description" => "Meta description",
     "percent" => "Percent",
+    "send" => "Send",
+    "ad_soyad" => "Name, surname",
+    "note" => "Note",
+    "birthday" => "Date of birth",
+    "male" => "Male",
+    "female" => "Female",
+    "upload_photo" => "Upload photo",
+    "gender" => "Gender",
 
 
     
@@ -107,4 +117,10 @@ return [
     "enter_email_address" => "Enter your e-mail address",
     "how_we_work_text" => "How we work text",
     "mediada_biz" => "We in the media",
+    "donate_messages" => "Donation messages",
+    "xidmet_secin" => "Select a service",
+
+    "subscriber_store_success" => "",
+    "donate_message_store_success" => "",
+    "volunteer_message_store_success" => "",
 ];

@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\BannerController;
 use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\DonateMessageController;
 use App\Http\Controllers\Admin\GalleryController;
 use App\Http\Controllers\Admin\MenuController;
 use App\Http\Controllers\Admin\PartnerController;
@@ -16,8 +17,10 @@ use App\Http\Controllers\Admin\Report\MonthlyReportController;
 use App\Http\Controllers\Admin\Report\ReportYearController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\SettingController;
+use App\Http\Controllers\Admin\SubscribeController;
 use App\Http\Controllers\Admin\TeamController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\VolunterController;
 use App\Http\Controllers\Site\SiteController;
 use App\Http\Middleware\IsLoginMiddleware;
 use App\Http\Middleware\LocaleMiddleware;
@@ -186,6 +189,21 @@ Route::middleware([LocaleMiddleware::class])->group(function () {
                     Route::post('/update/{id}', [PartnerController::class, 'update'])->name('update');
                     Route::post('/sort', [PartnerController::class, 'sort'])->name('sort');
                 });
+                Route::group(['prefix' => 'subscribers', 'as' => 'subscribers.'], function () {
+                    Route::get('/', [SubscribeController::class, 'index'])->name('index');
+                    Route::post('/store', [SubscribeController::class, 'store'])->name('store');
+                });
+                Route::group(['prefix' => 'donate_messages', 'as' => 'donate_messages.'], function () {
+                    Route::get('/', [DonateMessageController::class, 'index'])->name('index');
+                    Route::get('/view/{id}', [DonateMessageController::class, 'view'])->name('view');
+                    Route::post('/store', [DonateMessageController::class, 'store'])->name('store');
+                });
+                Route::group(['prefix' => 'volunteers', 'as' => 'volunteers.'], function () {
+                    Route::get('/', [VolunterController::class, 'index'])->name('index');
+                    Route::get('/view/{id}', [VolunterController::class, 'view'])->name('view');
+                    Route::post('/store', [VolunterController::class, 'store'])->name('store');
+                });
+                
             });
         });
 

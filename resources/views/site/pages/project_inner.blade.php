@@ -7,6 +7,8 @@
         <meta name="twitter:title" content="{{$project_translate->title}} | {{ __('main.projects') }} | {{ $settings->getTranslate->where('lang', Session('lang'))->first()->title }}">
         <meta name="description" content="{{$project_translate->meta_description}}">
         <meta property="og:description" content="{{$project_translate->meta_description}}">
+        <meta property="og:image" content="{{ asset('storage/uploads/projects/' . $project->card_image) }}">
+        <meta name="twitter:image" content="{{ asset('storage/uploads/projects/' . $project->card_image) }}">
     @endpush
 
     @include('site.components.page_heading_project')
