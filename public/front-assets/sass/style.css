@@ -1191,19 +1191,19 @@ button {
 .services-cat {
   padding: 60px 0;
 }
-.services-cat .row:nth-child(3) .service-box .service-img {
+.services-cat .col-lg-6:nth-child(odd) .service-box .service-img {
   background-color: #FCAF1A;
 }
-.services-cat .row:nth-child(3) .service-box .service-name {
+.services-cat .col-lg-6:nth-child(odd) .service-box .service-name {
   color: #FCAF1A;
 }
-.services-cat .row:nth-child(2) .service-box .service-img {
+.services-cat .col-lg-6:nth-child(even) .service-box .service-img {
   background-color: #7BC18F;
 }
-.services-cat .row:nth-child(2) .service-box .service-name {
+.services-cat .col-lg-6:nth-child(even) .service-box .service-name {
   color: #7BC18F;
 }
-.services-cat .row .service-box {
+.services-cat .col-lg-6 .service-box {
   padding: 15px;
   border-radius: 5px;
   background-color: #fff;
@@ -1212,7 +1212,7 @@ button {
   display: flex;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
 }
-.services-cat .row .service-box .service-img {
+.services-cat .col-lg-6 .service-box .service-img {
   width: 120px;
   height: 120px;
   display: flex;
@@ -1222,16 +1222,16 @@ button {
   border-radius: 50%;
   background-color: #0E3654;
 }
-.services-cat .row .service-box .service-img img {
+.services-cat .col-lg-6 .service-box .service-img img {
   width: 50%;
 }
-.services-cat .row .service-box .service-name {
+.services-cat .col-lg-6 .service-box .service-name {
   font-weight: 600;
   font-size: 20px;
   line-height: 30px;
   color: #0E3654;
 }
-.services-cat .row .service-box .service-text {
+.services-cat .col-lg-6 .service-box .service-text {
   font-weight: 500;
   font-size: 12px;
   max-width: 300px;
