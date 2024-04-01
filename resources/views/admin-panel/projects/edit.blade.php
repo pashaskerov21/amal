@@ -73,7 +73,7 @@
                         <div class="mb-3">
                             <label class="form-label">{{ __('main.card_image') }}</label>
                             <input type="file" class="form-control" name="card_image">
-                            <small class="d-block py-2">PNG - JPG - JPEG - SVG - WEBP</small>
+                            <small class="d-block py-2">PNG - JPG - JPEG - SVG - WEBP / MAXSIZE: 1MB</small>
                         </div>
                         @if ($project->card_image)
                             <div class='row border my-3 py-2 w-100 mx-auto'>
@@ -90,7 +90,7 @@
                         <div class="mb-3">
                             <label class="form-label">{{ __('main.banner_image') }}</label>
                             <input type="file" class="form-control" name="banner_image">
-                            <small class="d-block py-2">PNG - JPG - JPEG - SVG - WEBP</small>
+                            <small class="d-block py-2">PNG - JPG - JPEG - SVG - WEBP / MAXSIZE: 1MB</small>
                         </div>
                         @if ($project->banner_image)
                             <div class='row border my-3 py-2 w-100 mx-auto'>
@@ -107,7 +107,7 @@
                         <div class="mb-3">
                             <label class="form-label">{{ __('main.gallery') }}</label>
                             <input type="file" class="form-control" name="gallery[]" multiple>
-                            <small class="d-block py-2">PNG - JPG - JPEG - SVG - WEBP</small>
+                            <small class="d-block py-2">PNG - JPG - JPEG - SVG - WEBP / MAXSIZE: 1MB</small>
                         </div>
                         <table class="table table-striped table-centered mb-0">
                             <tbody id="sortable-tbody" data-route="{{ route('admin.projects.gallery_sort') }}">

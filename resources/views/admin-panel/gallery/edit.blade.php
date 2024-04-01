@@ -17,7 +17,7 @@
                         <div class="mb-3">
                             <label class="form-label">{{ __('main.image') }}</label>
                             <input type="file" class="form-control" name="image" required>
-                            <small class="d-block py-2">PNG - JPG - JPEG - SVG - WEBP</small>
+                            <small class="d-block py-2">PNG - JPG - JPEG - SVG - WEBP / MAXSIZE: 1MB</small>
                         </div>
                         @if ($gallery_item->image)
                             <div class='row border my-3 py-2 w-100 mx-auto'>

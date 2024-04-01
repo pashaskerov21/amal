@@ -57,7 +57,7 @@
                                 <div class="mb-3">
                                     <label class="form-label">{{ __('main.image') }} 1</label>
                                     <input type="file" class="form-control" name="image_1">
-                                    <small class="d-block py-2">PNG - JPG - JPEG - SVG - WEBP</small>
+                                    <small class="d-block py-2">PNG - JPG - JPEG - SVG - WEBP / MAXSIZE: 1MB</small>
                                 </div>
                                 @if ($about->image_1)
                                     <div class='row border my-3 py-2 w-100 mx-auto'>
@@ -74,7 +74,7 @@
                                 <div class="mb-3">
                                     <label class="form-label">{{ __('main.image') }} 2</label>
                                     <input type="file" class="form-control" name="image_2">
-                                    <small class="d-block py-2">PNG - JPG - JPEG - SVG - WEBP</small>
+                                    <small class="d-block py-2">PNG - JPG - JPEG - SVG - WEBP / MAXSIZE: 1MB</small>
                                 </div>
                                 @if ($about->image_2)
                                     <div class='row border my-3 py-2 w-100 mx-auto'>
