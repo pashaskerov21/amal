@@ -69,6 +69,11 @@
                     </ul>
                     <ul class="social-links">
                         <li>
+                            <a href="{{$settings->facebook}}" target="_blank">
+                                <img src="{{ asset('front-assets/images/facebook.svg') }}" alt="">
+                            </a>
+                        </li>
+                        <li>
                             <a href="{{$settings->youtube}}" target="_blank">
                                 <img src="{{ asset('front-assets/images/yt.svg') }}" alt="">
                             </a>
