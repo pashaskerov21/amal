@@ -20,7 +20,7 @@
                         <th style="width: 100px"></th>
                     </tr>
                 </thead>
-                <tbody data-route="{{ route('admin.menu.sort') }}">
+                <tbody id="sortable-tbody" data-route="{{ route('admin.menu.sort') }}">
                     @foreach ($menues as $menu)
                         <tr data-id="{{ $menu->id }}" data-order="{{ $menu->order }}">
                             <td>{{ $loop->index + 1 }}</td>
