@@ -77,7 +77,7 @@ class BlogController extends Controller
                 'title' => $request['title'][$i],
                 'destroy' => 0,
             ])->first();   
-            if($titleExist && $titleExist->id != $id){
+            if($titleExist && $titleExist->blog_id != $id){
                 return redirect()->back()->with('title_exist_error', 'true');
             }
         }
