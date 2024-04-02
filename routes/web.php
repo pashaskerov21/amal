@@ -28,7 +28,11 @@ use App\Http\Middleware\LocaleMiddleware;
 use App\Http\Middleware\NotLoginMiddleware;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\URL;
 
+if(env('APP_ENV') == 'production'){
+    URL::forceScheme('https');
+}
 
 Route::middleware([LocaleMiddleware::class])->group(function () {
     $locale = Request::segment(1);
