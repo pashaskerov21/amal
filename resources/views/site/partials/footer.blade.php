@@ -65,7 +65,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="{{ $settings->phone }}">
+                            <a href="tel:{{ $settings->phone }}">
                                 <img src="{{ asset('front-assets/images/Call.svg') }}" alt="">
                                 <span>{{ $settings->phone }}</span>
                             </a>
