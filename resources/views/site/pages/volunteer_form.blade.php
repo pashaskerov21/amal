@@ -8,5 +8,5 @@
     @endpush
 
     @include('site.components.page_heading')
-    @include('site.sections.volunteer')
+    @include('site.sections.volunteer_form')
 @endsection

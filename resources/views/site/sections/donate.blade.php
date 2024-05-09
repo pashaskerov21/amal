@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-10">
-                <form action="{{ route('admin.donate_messages.store') }}" method="POST" autocomplete="off">
+                <form action="{{ route('donate_messages_store') }}" method="POST" autocomplete="off">
                     @csrf
                     <div class="row">
                         <div class="form-group">
@@ -12,7 +12,7 @@
                             <input type="text" placeholder="{{ __('main.phone') }}" name="phone" required>
                         </div>
                         <div class="form-group col-lg-6">
-                            <input type="email" placeholder="{{ __('main.email') }}" name="email" required>
+                            <input type="email" placeholder="{{ __('main.email') }}" name="email">
                         </div>
                         <div class="form-group col-lg-6">
                             <select name="service_id">
@@ -22,7 +22,7 @@
                             </select>
                         </div>
                         <div class="form-group col-lg-6">
-                            <input type="text" placeholder="{{ __('main.amount') }}" name="amount" required>
+                            <input type="text" placeholder="{{ __('main.amount') }}" name="amount">
                         </div>
                         <div class="form-group">
                             <textarea name="note" rows="6" placeholder="{{ __('main.note') }}"></textarea>

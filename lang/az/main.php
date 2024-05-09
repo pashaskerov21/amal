@@ -125,4 +125,7 @@ return [
     "subscriber_store_success" => "",
     "donate_message_store_success" => "",
     "volunteer_message_store_success" => "",
+
+    "volunteer_applications" => "Könüllü müraciətləri", 
+    "headings" => "Başlıqlar",
 ];

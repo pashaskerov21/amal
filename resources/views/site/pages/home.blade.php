@@ -23,6 +23,9 @@
     @if ($blogs->count() > 0)
         @include('site.sections.media.media_home')
     @endif
+    @if ($volunteers->count() > 0)
+        @include('site.sections.volunteers')
+    @endif
     @if ($partners->count() > 0)
         @include('site.sections.partners')
     @endif

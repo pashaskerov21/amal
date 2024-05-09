@@ -120,17 +120,15 @@
                                             </div>
                                         </td>
                                         <td>
-                                            <div class="table-action">
-                                                <a href="{{ asset('storage/uploads/projects/gallery/' . $gallery_item->image) }}" class="btn btn-primary me-1" data-fancybox="">
+                                            <div class="table-action d-flex justify-content-end align-items-center gap-1">
+                                                <a href="{{ asset('storage/uploads/projects/gallery/' . $gallery_item->image) }}" class="btn btn-primary" data-fancybox="">
                                                     <i class="fa-solid fa-eye"></i></a>
                                                 <a class="btn btn-danger" href="{{ route('admin.projects.gallery_delete', $gallery_item->id) }}"
                                                     onclick="return confirmDelete(event, this.href)">
                                                     <i class="mdi mdi-delete"></i>
                                                 </a>
+                                                <button class="btn btn-primary"><i class="ri-drag-move-2-line"></i></button>
                                             </div>
-                                        </td>
-                                        <td>
-                                            <button class="btn btn-primary"><i class="ri-drag-move-2-line"></i></button>
                                         </td>
                                     </tr>
                                 @endforeach

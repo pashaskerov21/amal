@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-12">
             <div class="page-title-box">
-                <h4 class="page-title">{{ __('main.donate_messages') }}</h4>
+                <h4 class="page-title">{{ __('main.volunteer_applications') }}</h4>
             </div>
         </div>
     </div>
@@ -17,31 +17,21 @@
                         <th>{{ __('main.ad_soyad') }}</th>
                         <th>{{ __('main.phone') }}</th>
                         <th>{{ __('main.email') }}</th>
-                        <th>{{ __('main.service') }}</th>
-                        <th>{{ __('main.amount') }}</th>
                         <th>{{ __('main.date') }}</th>
                         <th style="width: 150px">{{ __('main.actions') }}</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($donate_messages as $message)
+                    @foreach ($volunteer_applications as $volunteer_application)
                         <tr>
                             <td>{{ $loop->index + 1 }}</td>
-                            <td>{{ $message->fullname }}</td>
-                            <td>{{ $message->phone }}</td>
-                            <td>{{ $message->email }}</td>
-                            <td>
-                                @if ($message->service_id == 0)
-                                    -
-                                @else
-                                    {{ $message->getService->where('lang', Session('lang'))->first()->title }}
-                                @endif
-                            </td>
-                            <td>{{ $message->amount }}</td>
-                            <td>{{ $message->created_at }}</td>
+                            <td>{{ $volunteer_application->fullname }}</td>
+                            <td>{{ $volunteer_application->phone }}</td>
+                            <td>{{ $volunteer_application->email }}</td>
+                            <td>{{ $volunteer_application->created_at }}</td>
                             <td>
                                 <div class="table-action">
-                                    <a href="{{ route('admin.donate_messages.view', $message->id) }}"
+                                    <a href="{{ route('admin.volunteer_applications.view', $volunteer_application->id) }}"
                                         class="btn btn-success me-1">
                                         <i class="fa-solid fa-eye"></i>
                                     </a>

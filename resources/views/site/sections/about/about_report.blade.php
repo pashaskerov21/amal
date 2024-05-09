@@ -1,7 +1,8 @@
-<section class="bg-video" style="background-image: url('{{ asset('front-assets/images/bg-video.png') }}');">
+<section class="bg-video">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-xl-5 col-md-6 video-content">
+            <div class="col-xl-5 col-md-6 video-content"
+                style="background-image: url('{{ asset('storage/uploads/about/' . $about->report_cover_1) }}');">
                 <div class="after">
                     <div class="after after-1">
                         <div class="after after-2">
@@ -13,21 +14,25 @@
                 </div>
             </div>
             <div class="col-xl-7 col-md-6 p-0">
-                <div class="content ">
-                    <div class="video-section-title  animate__animated animate__fadeInUp ">
-                        {{ $about->getTranslate->where('lang', Session('lang'))->first()->report_title }}
-                    </div>
-                    <div class="video-section-desc  animate__animated animate__fadeInRight ">
-                        {{ $about->getTranslate->where('lang', Session('lang'))->first()->report_text }}
-                    </div>
-                    <div class="number-counter-section">
-                        <div class="progress_1">
-                            @foreach ($about_reports as $report)
-                                <div class="column">
-                                    <span class="odometer" data-count="{{$report->value}}">{{$report->value}}</span>+
-                                    <span class="txt">{{$report->getTranslate->where('lang', Session('lang'))->first()->title}}</span>
-                                </div>
-                            @endforeach
+                <div class="content " style="background-image: url('{{ asset('storage/uploads/about/' . $about->report_cover_2) }}');">
+                    <div class="z-55">
+                        <div class="video-section-title  animate__animated animate__fadeInUp ">
+                            {{ $about->getTranslate->where('lang', Session('lang'))->first()->report_title }}
+                        </div>
+                        <div class="video-section-desc  animate__animated animate__fadeInRight ">
+                            {{ $about->getTranslate->where('lang', Session('lang'))->first()->report_text }}
+                        </div>
+                        <div class="number-counter-section">
+                            <div class="progress_1">
+                                @foreach ($about_reports as $report)
+                                    <div class="column">
+                                        <span class="odometer"
+                                            data-count="{{ $report->value }}">{{ $report->value }}</span>+
+                                        <span
+                                            class="txt">{{ $report->getTranslate->where('lang', Session('lang'))->first()->title }}</span>
+                                    </div>
+                                @endforeach
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -27,7 +27,7 @@
                                     @foreach ($about->getTranslate as $index => $translate)
                                     <input type="hidden" name="lang[]" value="{{$translate->lang}}">
                                     <div class="tab-pane show @if ($index == 0) active @endif" id="tab_{{$translate->lang}}">
-                                        <div class="mb-3">
+                                        <div class="mb-3 d-none">
                                             <label class="form-label">{{ __('main.home_title') }} {{$translate->lang}}</label>
                                             <input type="text" class="form-control" name="home_title[]" value="{{$translate->home_title}}">
                                         </div>
@@ -92,6 +92,40 @@
                                     <label class="form-label">{{ __('main.video') }} url</label>
                                     <input type="url" class="form-control" name="video_url" value="{{$about->video_url}}">
                                 </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Video cover</label>
+                                    <input type="file" class="form-control" name="report_cover_1">
+                                    <small class="d-block py-2">PNG - JPG - JPEG - SVG - WEBP / MAXSIZE: 1MB</small>
+                                </div>
+                                @if ($about->report_cover_1)
+                                    <div class='row border my-3 py-2 w-100 mx-auto'>
+                                        <div class="col-6 d-flex justify-content-start align-items-center">
+                                            <img src="{{ asset('storage/uploads/about/' . $about->report_cover_1) }}" width="100" height="100" alt='' style="object-fit: contain" />
+                                        </div>
+                                        <div class="col-6 d-flex justify-content-end align-items-center">
+                                            <a href="{{ asset('storage/uploads/about/' . $about->report_cover_1) }}" data-fancybox="" class="btn btn-primary">
+                                                <i class="fa-solid fa-eye"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                @endif
+                                <div class="mb-3">
+                                    <label class="form-label">Report cover</label>
+                                    <input type="file" class="form-control" name="report_cover_2">
+                                    <small class="d-block py-2">PNG - JPG - JPEG - SVG - WEBP / MAXSIZE: 1MB</small>
+                                </div>
+                                @if ($about->report_cover_2)
+                                    <div class='row border my-3 py-2 w-100 mx-auto'>
+                                        <div class="col-6 d-flex justify-content-start align-items-center">
+                                            <img src="{{ asset('storage/uploads/about/' . $about->report_cover_2) }}" width="100" height="100" alt='' style="object-fit: contain" />
+                                        </div>
+                                        <div class="col-6 d-flex justify-content-end align-items-center">
+                                            <a href="{{ asset('storage/uploads/about/' . $about->report_cover_2) }}" data-fancybox="" class="btn btn-primary">
+                                                <i class="fa-solid fa-eye"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                @endif
                             </div>
                             <div class="col-12">
                                 <button type="submit" class="btn btn-primary">{{__('main.save')}}</button>

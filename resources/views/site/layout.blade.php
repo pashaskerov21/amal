@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="az">
 
 <head>
     <meta charset="UTF-8">
@@ -7,8 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <link rel="stylesheet" href="{{ asset('front-assets/assets/bootstrap/css/bootstrap.min.css') }}" />
-    <link rel="stylesheet" href="{{ asset('front-assets/sass/style.css') }}" />
-    <link rel="stylesheet" href="{{ asset('front-assets/sass/update.css') }}" />
+    <link rel="stylesheet" href="{{ asset('front-assets/sass/style.css?v=') . env('ASSET_VERSION') }} }}" />
+    <link rel="stylesheet" href="{{ asset('front-assets/sass/update.css?v=') . env('ASSET_VERSION') }} }}" />
     <link rel="stylesheet" href="{{ asset('front-assets/assets/swiper/swiper-bundle.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('front-assets/assets/animate_css/animate.min.css') }}">
     <link rel="stylesheet" href="https://cdn.givecloud.co/npm/odometer@0.4.8/themes/odometer-theme-default.css">
@@ -18,6 +18,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('front-assets/favicon/favicon-16x16.png') }}">
     <link rel="manifest" href="{{ asset('front-assets/favicon/site.webmanifest') }}">
     <link rel="mask-icon" href="{{ asset('front-assets/favicon/safari-pinned-tab.svg') }}" color="#5bbad5">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
 
@@ -55,9 +56,19 @@
         <meta property="og:locale:alternate" content="ru_RU">
     @endif
 </head>
+<style>
+
+</style>
 
 <body>
-
+    <div class="back-to-top">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor"
+            class="bi bi-chevron-up" viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+                d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708z">
+            </path>
+        </svg>
+    </div>
     @include('site.partials.header')
     @yield('content')
     <div class="apply" style="background-color: #F4F5FA;">
@@ -71,8 +82,8 @@
                         <form action="{{ route('admin.subscribers.store') }}" method="POST">
                             @csrf
                             <div class="form-group">
-                                <input type="email" name="email" placeholder="{{ __('main.enter_email_address') }}"
-                                    required>
+                                <input type="email" name="email"
+                                    placeholder="{{ __('main.enter_email_address') }}" required>
                                 <button>{{ __('main.subscribe') }}</button>
                             </div>
                         </form>
@@ -127,9 +138,9 @@
     <script src="{{ asset('front-assets/assets/swiper/swiper-bundle.min.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/odometer@0.4.8/odometer.js"></script>
-    <script src="{{ asset('front-assets/js/slider.js') }}"></script>
-    <script src="{{ asset('front-assets/js/counter.js') }}"></script>
-    <script src="{{ asset('front-assets/js/script.js') }}"></script>
+    <script src="{{ asset('front-assets/js/slider.js?v=') . env('ASSET_VERSION') }} }}"></script>
+    <script src="{{ asset('front-assets/js/counter.js?v=') . env('ASSET_VERSION') }} }}"></script>
+    <script src="{{ asset('front-assets/js/script.js?v=') . env('ASSET_VERSION') }} }}"></script>
 </body>
 
 </html>

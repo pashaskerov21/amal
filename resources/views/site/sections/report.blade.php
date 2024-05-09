@@ -23,7 +23,7 @@
                     <tr>
                         <th>{{ __('main.years') }}</th>
                         <th>{{ __('main.edilen_yardimlarin_sayi') }}</th>
-                        <th>{{ __('main.amount') }}</th>
+                        {{-- <th>{{ __('main.amount') }}</th> --}}
                     </tr>
                 </thead>
                 <tbody>
@@ -31,7 +31,7 @@
                         <tr data-service-id="{{$report->service_id}}">
                             <td>{{ $report->year }}</td>
                             <td>{{ $report->main_value }}</td>
-                            <td>{{ $report->total_amount }} AZN</td>
+                            {{-- <td>{{ $report->total_amount }} AZN</td> --}}
                         </tr>
                     @endforeach
                 </tbody>
@@ -44,7 +44,7 @@
                         <th>{{ __('main.months') }}</th>
                         <th>{{ __('main.years') }}</th>
                         <th>{{ __('main.edilen_yardimlarin_sayi') }}</th>
-                        <th>{{ __('main.amount') }}</th>
+                        {{-- <th>{{ __('main.amount') }}</th> --}}
                     </tr>
                 </thead>
                 <tbody>
@@ -53,7 +53,7 @@
                             <td>{{ $report->getMonth->where('lang', Session('lang'))->first()->title }}</td>
                             <td>{{ $report->year }}</td>
                             <td>{{ $report->main_value }}</td>
-                            <td>{{ $report->total_amount }} AZN</td>
+                            {{-- <td>{{ $report->total_amount }} AZN</td> --}}
                         </tr>
                     @endforeach
                 </tbody>

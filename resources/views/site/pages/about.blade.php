@@ -18,6 +18,9 @@
     @if ($team_members->count() > 0)
         @include('site.sections.team')
     @endif
+    @if ($volunteers->count() > 0)
+        @include('site.sections.volunteers')
+    @endif
     @include('site.sections.about.about_report')
     @if ($partners->count() > 0)
         @include('site.sections.partners')

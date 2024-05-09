@@ -26,7 +26,9 @@
                     </div>
                     <div class="mb-3">
                         <label class="form-label">{{ __('main.service') }}</label>
-                        <input type="text" class="form-control" value="{{ $message->getService->where('lang', Session('lang'))->first()->title }}" readonly>
+                        <input type="text" class="form-control"
+                            value="{{ $message->service_id == 0 ? '' : $message->getService->where('lang', Session('lang'))->first()->title }}"
+                            readonly>
                     </div>
                     <div class="mb-3">
                         <label class="form-label">{{ __('main.amount') }}</label>

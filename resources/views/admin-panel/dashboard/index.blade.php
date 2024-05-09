@@ -81,10 +81,10 @@
             </a>
         </div>
         <div class="col-12 col-md-6">
-            <a href="{{route('admin.volunteers.index')}}" class="card">
+            <a href="{{route('admin.volunteer_applications.index')}}" class="card">
                 <div class="card-body d-flex justify-content-between align-items-center">
-                    <h3>{{__('main.volunteers')}}</h3>
-                    <h3>{{$volunteers->count()}}</h3>
+                    <h3>{{__('main.volunteer_applications')}}</h3>
+                    <h3>{{$volunteer_applications->count()}}</h3>
                 </div>
             </a>
         </div>

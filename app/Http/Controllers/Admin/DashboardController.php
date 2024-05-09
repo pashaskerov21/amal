@@ -14,6 +14,7 @@ use App\Models\Project;
 use App\Models\Service;
 use App\Models\Subscriber;
 use App\Models\Volunteer;
+use App\Models\VolunteerApplication;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -28,10 +29,10 @@ class DashboardController extends Controller
         $blogs = Blog::where('destroy', 0)->orderBy('order')->get();
         $partners = Partner::where('destroy', 0)->orderBy('order')->get();
         $donate_messages = DonateMessage::all();
-        $volunteers = Volunteer::all();
+        $volunteer_applications = VolunteerApplication::all();
         $subscribers = Subscriber::all();
         $menues = Menu::where('destroy', 0)->orderBy('order')->get();
 
-        return view('admin-panel.dashboard.index',compact('lang','banners','projects','services','annual_reports','monthly_reports','blogs','partners','donate_messages','volunteers','subscribers','menues'));
+        return view('admin-panel.dashboard.index',compact('lang','banners','projects','services','annual_reports','monthly_reports','blogs','partners','donate_messages','volunteer_applications','subscribers','menues'));
     }
 }

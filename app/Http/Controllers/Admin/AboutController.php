@@ -22,6 +22,8 @@ class AboutController extends Controller
         $about = About::findOrFail(1);
         $image_1 = $about->image_1;
         $image_2 = $about->image_2;
+        $report_cover_1 = $about->report_cover_1;
+        $report_cover_2 = $about->report_cover_2;
         if ($request->hasFile('image_1')) {
             $file_1 = $request->image_1;
             $image_1 = time() . $file_1->getClientOriginalName();
@@ -32,10 +34,22 @@ class AboutController extends Controller
             $image_2 = time() . $file_2->getClientOriginalName();
             $file_2->storeAs('public/uploads/about', $image_2);
         }
+        if ($request->hasFile('report_cover_1')) {
+            $file_3 = $request->report_cover_1;
+            $report_cover_1 = time() . $file_3->getClientOriginalName();
+            $file_3->storeAs('public/uploads/about', $report_cover_1);
+        }
+        if ($request->hasFile('report_cover_2')) {
+            $file_4 = $request->report_cover_2;
+            $report_cover_2 = time() . $file_4->getClientOriginalName();
+            $file_4->storeAs('public/uploads/about', $report_cover_2);
+        }
         $about->update([
             'image_1' => $image_1,
             'image_2' => $image_2,
             'video_url' => $request['video_url'],
+            'report_cover_1' => $report_cover_1,
+            'report_cover_2' => $report_cover_2,
         ]);
         
 

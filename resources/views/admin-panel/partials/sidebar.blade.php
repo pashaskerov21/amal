@@ -42,6 +42,12 @@
                 </a>
             </li>
             <li class="side-nav-item">
+                <a href="{{ route('admin.headings.index') }}" class="side-nav-link">
+                    <i class="fa-solid fa-heading"></i>
+                    <span> {{__('main.headings')}} </span>
+                </a>
+            </li>
+            <li class="side-nav-item">
                 <a data-bs-toggle="collapse" href="#sidebar-about" class="side-nav-link">
                     <i class="ri-image-line"></i>
                     <span> {{__('main.about')}} </span>
@@ -60,6 +66,9 @@
                         </li>
                         <li>
                             <a href="{{ route('admin.team.index') }}">{{__('main.our_team')}}</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('admin.volunteers.index') }}">{{__('main.volunteers')}}</a>
                         </li>
                     </ul>
                 </div>
@@ -121,9 +130,9 @@
                 </a>
             </li>
             <li class="side-nav-item">
-                <a href="{{ route('admin.volunteers.index') }}" class="side-nav-link">
+                <a href="{{ route('admin.volunteer_applications.index') }}" class="side-nav-link">
                     <i class="fa-solid fa-users"></i>
-                    <span> {{__('main.volunteers')}} </span>
+                    <span> {{__('main.volunteer_applications')}} </span>
                 </a>
             </li>
             <li class="side-nav-item">

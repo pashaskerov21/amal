@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\About;
+namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdateRequest extends FormRequest
+class VolunteerApplicationRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,10 +22,7 @@ class UpdateRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "image_1" => 'image|mimes:png,jpg,jpeg,svg,webp',
-            "image_2" => 'image|mimes:png,jpg,jpeg,svg,webp',
-            "report_cover_1" => 'image|mimes:png,jpg,jpeg,svg,webp',
-            "report_cover_2" => 'image|mimes:png,jpg,jpeg,svg,webp',
+            "image" => 'image|mimes:png,jpg,jpeg,svg,webp',
         ];
     }
 }

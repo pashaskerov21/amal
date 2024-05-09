@@ -18,12 +18,12 @@ class DonateMessageController extends Controller
     public function store(Request $request)
     {
         DonateMessage::create([
-            'service_id' => $request['service_id'],
+            'service_id' => $request['service_id'] ?? 0,
             'fullname' => $request['fullname'],
             'phone' => $request['phone'],
-            'email' => $request['email'],
-            'amount' => $request['amount'],
-            'note' => $request['note'],
+            'email' => $request['email'] ?? null,
+            'amount' => $request['amount'] ?? null,
+            'note' => $request['note'] ?? null,
         ]);
         return redirect()->back()->with('donate_message_store_success', 'true');        
     }

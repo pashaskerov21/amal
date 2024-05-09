@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-12">
             <div class="page-title-box">
-                <h4 class="page-title">{{ __('main.volunteers') }}</h4>
+                <h4 class="page-title">{{ __('main.volunteer_application') }}</h4>
             </div>
         </div>
     </div>
@@ -14,25 +14,25 @@
                 <div class="col-12 col-lg-6">
                     <div class="mb-3">
                         <label class="form-label">{{ __('main.ad_soyad') }}</label>
-                        <input type="text" class="form-control" value="{{ $volunteer->fullname }}" readonly>
+                        <input type="text" class="form-control" value="{{ $volunteer_application->fullname }}" readonly>
                     </div>
                     <div class="mb-3">
                         <label class="form-label">{{ __('main.phone') }}</label>
-                        <input type="text" class="form-control" value="{{ $volunteer->phone }}" readonly>
+                        <input type="text" class="form-control" value="{{ $volunteer_application->phone }}" readonly>
                     </div>
                     <div class="mb-3">
                         <label class="form-label">{{ __('main.email') }}</label>
-                        <input type="text" class="form-control" value="{{ $volunteer->email }}" readonly>
+                        <input type="text" class="form-control" value="{{ $volunteer_application->email }}" readonly>
                     </div>
                     <div class="mb-3">
                         <label class="form-label">{{ __('main.birthday') }}</label>
-                        <input type="text" class="form-control" value="{{ $volunteer->birthday }}" readonly>
+                        <input type="text" class="form-control" value="{{ $volunteer_application->birthday }}" readonly>
                     </div>
                     <div class="mb-3">
                         <label class="form-label">{{ __('main.gender') }}</label>
-                        @if ($volunteer->gender === 'male')
+                        @if ($volunteer_application->gender === 'male')
                             <input type="text" class="form-control" value="{{ __('main.male') }}" readonly>
-                        @elseif($volunteer->gender === 'female')
+                        @elseif($volunteer_application->gender === 'female')
                             <input type="text" class="form-control" value="{{ __('main.female') }}" readonly>
                         @else
                             <input type="text" class="form-control" value="-" readonly>
@@ -40,16 +40,16 @@
                     </div>
                     <div class="mb-3">
                         <label class="form-label">{{ __('main.note') }}</label>
-                        <textarea class="form-control" readonly>{{ $volunteer->note }}</textarea>
+                        <textarea class="form-control" readonly>{{ $volunteer_application->note }}</textarea>
                     </div>
-                    @if ($volunteer->image)
+                    @if ($volunteer_application->image)
                         <div class='row border my-3 py-2 w-100 mx-auto'>
                             <div class="col-6 d-flex justify-content-start align-items-center">
-                                <img src="{{ asset('storage/uploads/volunteers/' . $volunteer->image) }}" width="100"
+                                <img src="{{ asset('storage/uploads/volunteer_applications/' . $volunteer_application->image) }}" width="100"
                                     height="100" alt='' style="object-fit: contain" />
                             </div>
                             <div class="col-6 d-flex justify-content-end align-items-center">
-                                <a href="{{ asset('storage/uploads/volunteers/' . $volunteer->image) }}" data-fancybox=""
+                                <a href="{{ asset('storage/uploads/volunteer_applications/' . $volunteer_application->image) }}" data-fancybox=""
                                     class="btn btn-primary">
                                     <i class="fa-solid fa-eye"></i>
                                 </a>

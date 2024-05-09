@@ -1,8 +1,12 @@
 <section class="our-team">
     <div class="container">
         <div class="general-title">
-            <div class="title">{{ __('main.our_team') }}</div>
-            {{-- <div class="subtitle">Lorem ipsum dolor sit amet consectetur.</div> --}}
+            <div class="title">
+                {{ $headings->where('key', 'team')->first()->getTranslate->where('lang', Session('lang'))->first()->title }}
+            </div>
+            <div class="subtitle">
+                {{ $headings->where('key', 'team')->first()->getTranslate->where('lang', Session('lang'))->first()->subtitle }}
+            </div>
         </div>
         <div class="team-slider swiper">
             <div class="swiper-wrapper">

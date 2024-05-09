@@ -13,13 +13,9 @@ return new class extends Migration
     {
         Schema::create('volunteers', function (Blueprint $table) {
             $table->id();
-            $table->text('fullname')->nullable();
-            $table->text('phone')->nullable();
-            $table->text('email')->nullable();
-            $table->text('birthday')->nullable();
             $table->text('image')->nullable();
-            $table->string('gender')->nullable();
-            $table->text('note')->nullable();
+            $table->integer('order')->default(0);
+            $table->integer('destroy')->default(0);
             $table->timestamps();
         });
     }

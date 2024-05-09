@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\DonateMessageController;
 use App\Http\Controllers\Admin\GalleryController;
+use App\Http\Controllers\Admin\HeadingController;
 use App\Http\Controllers\Admin\MenuController;
 use App\Http\Controllers\Admin\PartnerController;
 use App\Http\Controllers\Admin\ProjectController;
@@ -20,7 +21,8 @@ use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\SubscribeController;
 use App\Http\Controllers\Admin\TeamController;
 use App\Http\Controllers\Admin\UserController;
-use App\Http\Controllers\Admin\VolunterController;
+use App\Http\Controllers\Admin\VolunteerApplicationController;
+use App\Http\Controllers\Admin\VolunteerController;
 use App\Http\Controllers\Site\SearchController;
 use App\Http\Controllers\Site\SiteController;
 use App\Http\Middleware\IsLoginMiddleware;
@@ -133,6 +135,16 @@ Route::middleware([LocaleMiddleware::class])->group(function () {
                     Route::post('/sort', [TeamController::class, 'sort'])->name('sort');
                 });
 
+                Route::group(['prefix' => 'volunteers', 'as' => 'volunteers.'], function () {
+                    Route::get('/', [VolunteerController::class, 'index'])->name('index');
+                    Route::get('/create', [VolunteerController::class, 'create'])->name('create');
+                    Route::get('/edit/{id}', [VolunteerController::class, 'edit'])->name('edit');
+                    Route::get('/delete/{id}', [VolunteerController::class, 'destroy'])->name('delete');
+                    Route::post('/store', [VolunteerController::class, 'store'])->name('store');
+                    Route::post('/update/{id}', [VolunteerController::class, 'update'])->name('update');
+                    Route::post('/sort', [VolunteerController::class, 'sort'])->name('sort');
+                });
+
                 Route::group(['prefix' => 'report', 'as' => 'report.'], function () {
                     Route::group(['prefix' => 'year', 'as' => 'year.'], function () {
                         Route::get('/', [ReportYearController::class, 'index'])->name('index');
@@ -194,6 +206,7 @@ Route::middleware([LocaleMiddleware::class])->group(function () {
                     Route::post('/update/{id}', [PartnerController::class, 'update'])->name('update');
                     Route::post('/sort', [PartnerController::class, 'sort'])->name('sort');
                 });
+
                 Route::group(['prefix' => 'subscribers', 'as' => 'subscribers.'], function () {
                     Route::get('/', [SubscribeController::class, 'index'])->name('index');
                     Route::post('/store', [SubscribeController::class, 'store'])->name('store');
@@ -201,16 +214,23 @@ Route::middleware([LocaleMiddleware::class])->group(function () {
                 Route::group(['prefix' => 'donate_messages', 'as' => 'donate_messages.'], function () {
                     Route::get('/', [DonateMessageController::class, 'index'])->name('index');
                     Route::get('/view/{id}', [DonateMessageController::class, 'view'])->name('view');
-                    Route::post('/store', [DonateMessageController::class, 'store'])->name('store');
                 });
-                Route::group(['prefix' => 'volunteers', 'as' => 'volunteers.'], function () {
-                    Route::get('/', [VolunterController::class, 'index'])->name('index');
-                    Route::get('/view/{id}', [VolunterController::class, 'view'])->name('view');
-                    Route::post('/store', [VolunterController::class, 'store'])->name('store');
+                Route::group(['prefix' => 'volunteer_applications', 'as' => 'volunteer_applications.'], function () {
+                    Route::get('/', [VolunteerApplicationController::class, 'index'])->name('index');
+                    Route::get('/view/{id}', [VolunteerApplicationController::class, 'view'])->name('view');
+                });
+
+                Route::group(['prefix' => 'headings', 'as' => 'headings.'], function () {
+                    Route::get('/', [HeadingController::class, 'index'])->name('index');
+                    Route::get('/edit/{id}', [HeadingController::class, 'edit'])->name('edit');
+                    Route::post('/update/{id}', [HeadingController::class, 'update'])->name('update');
                 });
                 
             });
         });
+
+        Route::post('/donate_messages_store', [DonateMessageController::class, 'store'])->name('donate_messages_store');
+        Route::post('/volunteer_applications_store', [VolunteerApplicationController::class, 'store'])->name('volunteer_applications_store');
 
         Route::get('/', [SiteController::class, 'home'])->name('home');
         Route::get('/search', [SearchController::class, 'search'])->name('search');
@@ -219,9 +239,9 @@ Route::middleware([LocaleMiddleware::class])->group(function () {
         Route::get('/donate', [SiteController::class, 'donate'])->name('donate_en');
         Route::get('/pozertvuite', [SiteController::class, 'donate'])->name('donate_ru');
 
-        Route::get('/konullu-ol', [SiteController::class, 'volunteer'])->name('volunteer_az');
-        Route::get('/volunteer', [SiteController::class, 'volunteer'])->name('volunteer_en');
-        Route::get('/volonter', [SiteController::class, 'volunteer'])->name('volunteer_ru');
+        Route::get('/konullu-ol', [SiteController::class, 'volunteer_form'])->name('volunteer_az');
+        Route::get('/volunteer', [SiteController::class, 'volunteer_form'])->name('volunteer_en');
+        Route::get('/volonter', [SiteController::class, 'volunteer_form'])->name('volunteer_ru');
 
         Route::get('/haqqimizda', [SiteController::class, 'about'])->name('about_az');
         Route::get('/about-us', [SiteController::class, 'about'])->name('about_en');

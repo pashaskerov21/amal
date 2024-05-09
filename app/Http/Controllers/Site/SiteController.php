@@ -17,6 +17,7 @@ use App\Models\Project;
 use App\Models\ProjectTranslate;
 use App\Models\Service;
 use App\Models\Team;
+use App\Models\Volunteer;
 use Illuminate\Http\Request;
 
 class SiteController extends Controller
@@ -32,7 +33,9 @@ class SiteController extends Controller
         $projects_lang = ['az' => '/layihelerimiz', 'en' => '/en/our-projects', 'ru' => '/ru/nasi-proekty'];
         $blogs = Blog::where('destroy', 0)->orderBy('order')->get();
         $blogs_lang = ['az' => '/mediada-biz', 'en' => '/en/we-in-the-media', 'ru' => '/ru/my-v-smi'];
-        return view('site.pages.home', compact('lang', 'banners', 'services', 'about', 'about_reports', 'projects', 'projects_lang','blogs','blogs_lang'));
+        $volunteers = Volunteer::where('destroy', 0)->orderBy('order')->get();
+
+        return view('site.pages.home', compact('lang', 'banners', 'services', 'about', 'about_reports', 'projects', 'projects_lang','blogs','blogs_lang','volunteers'));
     }
     public function donate()
     {
@@ -41,11 +44,11 @@ class SiteController extends Controller
         $services = Service::where('destroy', 0)->orderBy('order')->get();
         return view('site.pages.donate', compact('lang', 'meta_title','services'));
     }
-    public function volunteer()
+    public function volunteer_form()
     {
         $lang = ['az' => '/konullu-ol', 'en' => '/en/volunteer', 'ru' => '/ru/volonter'];
         $meta_title = __('main.konullu_ol');
-        return view('site.pages.volunteer', compact('lang', 'meta_title'));
+        return view('site.pages.volunteer_form', compact('lang', 'meta_title'));
     }
     public function about()
     {
@@ -56,7 +59,9 @@ class SiteController extends Controller
         $about_reports = AboutReport::where('destroy', 0)->orderBy('order')->get();
         $about_texts = AboutText::where('destroy', 0)->orderBy('order')->get();
         $team_members = Team::where('destroy', 0)->orderBy('order')->get();
-        return view('site.pages.about', compact('lang', 'meta_title', 'services', 'about', 'about_reports', 'about_texts', 'team_members'));
+        $volunteers = Volunteer::where('destroy', 0)->orderBy('order')->get();
+
+        return view('site.pages.about', compact('lang', 'meta_title', 'services', 'about', 'about_reports', 'about_texts', 'team_members','volunteers'));
     }
     public function projects()
     {

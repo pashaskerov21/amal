@@ -8,5 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Volunteer extends Model
 {
     use HasFactory;
-    protected $fillable = ['fullname','phone','email','birthday','image','gender','note'];
+    protected $fillable = ['image', 'order', 'destroy'];
+    public function getTranslate()
+    {
+        return $this->hasMany(VolunteerTranslate::class, 'volunteer_id', 'id');
+    }
 }

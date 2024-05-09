@@ -4,6 +4,8 @@ namespace Database\Seeders;
 
 use App\Models\About;
 use App\Models\AboutTranslate;
+use App\Models\Heading;
+use App\Models\HeadingTranslate;
 use App\Models\Menu;
 use App\Models\MenuTranslate;
 use App\Models\ReportMonth;
@@ -132,5 +134,36 @@ class DatabaseSeeder extends Seeder
         ReportMonthTranslate::create(["month_id" => 12, "lang" => 'az', "title" => "Dekabr"]);
         ReportMonthTranslate::create(["month_id" => 12, "lang" => 'en', "title" => "December"]);
         ReportMonthTranslate::create(["month_id" => 12, "lang" => 'ru', "title" => "декабрь"]);
+
+
+        Heading::create(["id" => 1, "key" => "about"]);
+        Heading::create(["id" => 2, "key" => "project"]);
+        Heading::create(["id" => 3, "key" => "service"]);
+        Heading::create(["id" => 4, "key" => "media"]);
+        Heading::create(["id" => 5, "key" => "partner"]);
+        Heading::create(["id" => 6, "key" => "volunteer"]);
+        Heading::create(["id" => 7, "key" => "team"]);
+
+        HeadingTranslate::create(["heading_id" => 1, "lang" => 'az']);
+        HeadingTranslate::create(["heading_id" => 1, "lang" => 'en']);
+        HeadingTranslate::create(["heading_id" => 1, "lang" => 'ru']);
+        HeadingTranslate::create(["heading_id" => 2, "lang" => 'az']);
+        HeadingTranslate::create(["heading_id" => 2, "lang" => 'en']);
+        HeadingTranslate::create(["heading_id" => 2, "lang" => 'ru']);
+        HeadingTranslate::create(["heading_id" => 3, "lang" => 'az']);
+        HeadingTranslate::create(["heading_id" => 3, "lang" => 'en']);
+        HeadingTranslate::create(["heading_id" => 3, "lang" => 'ru']);
+        HeadingTranslate::create(["heading_id" => 4, "lang" => 'az']);
+        HeadingTranslate::create(["heading_id" => 4, "lang" => 'en']);
+        HeadingTranslate::create(["heading_id" => 4, "lang" => 'ru']);
+        HeadingTranslate::create(["heading_id" => 5, "lang" => 'az']);
+        HeadingTranslate::create(["heading_id" => 5, "lang" => 'en']);
+        HeadingTranslate::create(["heading_id" => 5, "lang" => 'ru']);
+        HeadingTranslate::create(["heading_id" => 6, "lang" => 'az']);
+        HeadingTranslate::create(["heading_id" => 6, "lang" => 'en']);
+        HeadingTranslate::create(["heading_id" => 6, "lang" => 'ru']);
+        HeadingTranslate::create(["heading_id" => 7, "lang" => 'az']);
+        HeadingTranslate::create(["heading_id" => 7, "lang" => 'en']);
+        HeadingTranslate::create(["heading_id" => 7, "lang" => 'ru']);
     }
 }
